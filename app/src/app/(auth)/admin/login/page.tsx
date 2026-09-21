@@ -11,7 +11,8 @@ import { cn } from "@/lib/utils";
 function LoginForm() {
   const router = useRouter();
   const searchParams = useSearchParams();
-  const callbackUrl = searchParams.get("callbackUrl") || "/admin/dashboard";
+  const rawCallback = searchParams.get("callbackUrl");
+  const callbackUrl = !rawCallback || rawCallback === "/admin" ? "/admin/dashboard" : rawCallback;
 
   const [form, setForm] = useState({ email: "", password: "" });
   const [errors, setErrors] = useState<Record<string, string>>({});
