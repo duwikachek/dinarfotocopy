@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { signOut } from "next-auth/react";
 import {
@@ -75,8 +76,14 @@ export function AdminSidebar() {
       {/* Brand */}
       <div className="px-5 py-5 border-b border-[hsl(220,13%,91%)]">
         <Link href="/admin/dashboard" className="flex items-center gap-2.5">
-          <div className="w-8 h-8 rounded-lg bg-[hsl(224,12%,12%)] flex items-center justify-center flex-shrink-0">
-            <Printer className="w-4 h-4 text-white" strokeWidth={1.5} />
+          <div className="w-8 h-8 rounded-lg bg-white border border-slate-200 p-0.5 flex items-center justify-center flex-shrink-0 shadow-sm">
+            <Image
+              src="/logo.png"
+              alt="Logo Dinar Fotocopy"
+              width={28}
+              height={28}
+              className="w-full h-full object-contain"
+            />
           </div>
           <div>
             <p className="text-sm font-bold text-[hsl(224,12%,12%)] tracking-tight leading-tight">

@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { cn } from "@/lib/utils";
 import { useCartStore } from "@/store/cart-store";
@@ -34,9 +35,15 @@ export function PublicHeader() {
 
         {/* ── Logo & Brand ── */}
         <Link href="/" className="flex items-center gap-3 shrink-0" aria-label="Dinar Fotocopy — Beranda">
-          <div className="w-9 h-9 rounded-lg bg-primary-container flex items-center justify-center"
-            style={{ boxShadow: "0 0 12px rgba(0,164,239,0.4)" }}>
-            <span className="material-symbols-outlined text-on-primary-container text-xl">print</span>
+          <div className="w-10 h-10 rounded-xl bg-white p-1 flex items-center justify-center shrink-0 shadow-[0_0_15px_rgba(0,164,239,0.35)] border border-lumia-cyan/30">
+            <Image
+              src="/logo.png"
+              alt="Logo Dinar Fotocopy"
+              width={36}
+              height={36}
+              className="w-full h-full object-contain"
+              priority
+            />
           </div>
           <div className="flex flex-col">
             <span className="text-headline-sm text-on-surface font-semibold uppercase tracking-wider leading-none">

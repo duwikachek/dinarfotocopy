@@ -3,6 +3,7 @@
 import { useState, Suspense } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
 import Link from "next/link";
+import Image from "next/image";
 import { Eye, EyeOff, Printer, AlertCircle } from "lucide-react";
 import { signIn } from "next-auth/react";
 import { cn } from "@/lib/utils";
@@ -60,8 +61,15 @@ function LoginForm() {
     <div className="w-full max-w-sm animate-fade-in">
       {/* Brand */}
       <div className="text-center mb-8">
-        <div className="w-12 h-12 rounded-xl bg-[hsl(224,12%,12%)] flex items-center justify-center mx-auto mb-4 shadow-sm">
-          <Printer className="w-6 h-6 text-white" strokeWidth={1.5} />
+        <div className="w-14 h-14 rounded-2xl bg-white border border-slate-200 p-1 flex items-center justify-center mx-auto mb-4 shadow-sm">
+          <Image
+            src="/logo.png"
+            alt="Logo Dinar Fotocopy"
+            width={48}
+            height={48}
+            className="w-full h-full object-contain"
+            priority
+          />
         </div>
         <h1 className="text-xl font-bold text-[hsl(224,12%,12%)] tracking-tight">
           Dinar Fotocopy
