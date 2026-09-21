@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="id"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_standard" name="shell-type"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;600;700&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{colors:{"deep-purple-mid":"#100e24","on-primary-container":"#003653","glass-surface-hover":"rgba(255, 255, 255, 0.14)","on-secondary-fixed-variant":"#930005","lumia-emerald":"#10b981","surface-container":"#201e2c","tertiary-fixed":"#ffddb8","lumia-amber":"#f59e0b","on-tertiary-fixed-variant":"#653e00","on-surface":"#e5e0f3","secondary-container":"#c5020b","error":"#ffb4ab","inverse-surface":"#e5e0f3","on-background":"#e5e0f3","surface":"#14121f","outline":"#88929c","primary-container":"#00a4ef","error-container":"#93000a","surface-container-low":"#1c1a27","surface-container-lowest":"#0e0c1a","on-surface-variant":"#bec8d2","primary-fixed":"#cbe6ff","on-error-container":"#ffdad6","on-tertiary-container":"#4a2c00","lumia-cobalt":"#005a9e","glass-border":"rgba(255, 255, 255, 0.18)","tertiary-fixed-dim":"#ffb95f","inverse-primary":"#006494","tertiary":"#ffb95f","on-secondary-fixed":"#410001","deep-purple-end":"#080612","glass-border-bright":"rgba(255, 255, 255, 0.35)","surface-container-high":"#2b2836","glass-surface":"rgba(255, 255, 255, 0.08)","deep-purple-start":"#1b0a2a","surface-dim":"#14121f","on-tertiary":"#472a00","on-tertiary-fixed":"#2a1700","outline-variant":"#3e4851","inverse-on-surface":"#312f3d","secondary-fixed":"#ffdad5","on-error":"#690005","on-secondary":"#690003","surface-container-highest":"#363342","primary-fixed-dim":"#8ecdff","secondary":"#ffb4aa","on-secondary-container":"#ffd2cc","surface-variant":"#363342","on-primary":"#00344f","secondary-fixed-dim":"#ffb4aa","on-primary-fixed-variant":"#004b71","lumia-coral":"#ff3b30","primary":"#8ecdff","tertiary-container":"#d88a00","lumia-cyan":"#00a4ef","surface-tint":"#8ecdff","on-primary-fixed":"#001e30","background":"#14121f","surface-bright":"#3a3746"},borderRadius:{DEFAULT:"0.125rem",lg:"0.25rem",xl:"0.5rem",full:"0.75rem"},spacing:{"margin-lg":"3rem","gutter-lg":"1.5rem","space-sm":"0.5rem","space-lg":"1.5rem","space-md":"1rem","margin-md":"2rem","space-xs":"0.25rem",gutter:"1rem",margin:"1rem","space-xl":"2.5rem"},fontFamily:{"price-display":["Inter"],"label-caps":["Inter"],"headline-sm":["Inter"],"tile-stat":["Inter"],"headline-lg":["Inter"],"display-hero":["Inter"],"body-sm":["Inter"],"display-hero-mobile":["Inter"],"body-lg":["Inter"],"headline-md":["Inter"],"headline-lg-mobile":["Inter"],"body-md":["Inter"]},fontSize:{"price-display":["2rem",{lineHeight:"2.25rem",letterSpacing:"-0.02em",fontWeight:"700"}],"label-caps":["0.6875rem",{lineHeight:"1rem",letterSpacing:"0.08em",fontWeight:"600"}],"headline-sm":["1.125rem",{lineHeight:"1.5rem",fontWeight:"600"}],"tile-stat":["2.5rem",{lineHeight:"2.75rem",letterSpacing:"-0.03em",fontWeight:"200"}],"headline-lg":["2.25rem",{lineHeight:"2.75rem",letterSpacing:"-0.02em",fontWeight:"300"}],"display-hero":["3.5rem",{lineHeight:"4rem",letterSpacing:"-0.03em",fontWeight:"300"}],"body-sm":["0.8125rem",{lineHeight:"1.25rem",fontWeight:"400"}],"display-hero-mobile":["2.25rem",{lineHeight:"2.75rem",letterSpacing:"-0.02em",fontWeight:"400"}],"body-lg":["1.125rem",{lineHeight:"1.75rem",fontWeight:"400"}],"headline-md":["1.5rem",{lineHeight:"2rem",letterSpacing:"-0.015em",fontWeight:"600"}],"headline-lg-mobile":["1.75rem",{lineHeight:"2.25rem",letterSpacing:"-0.02em",fontWeight:"400"}],"body-md":["0.9375rem",{lineHeight:"1.5rem",fontWeight:"400"}]}}}};</script></head><body class="bg-surface text-on-surface font-body-md text-body-md antialiased selection:bg-primary-container selection:text-on-primary-container"><header class="fixed top-0 inset-x-0 z-50 bg-deep-purple-mid/85 backdrop-blur-xl shadow-[0_4px_30px_rgba(0,0,0,0.5)]"><div class="h-20 max-w-7xl mx-auto px-6 lg:px-12 flex items-center justify-between gap-gutter"><div class="flex items-center gap-space-md shrink-0"><img alt="Dinar Fotocopy Lumia Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1VDh339H2rFSV5vAzb9tL7rCfFkpmr4n_8UfoFzZx0FT-tDTtZW-3maSiSa8yy9WYxsWtHxWyTKD5JSNL1DYtu73qVmyUOSjqEUFYzckuXWO_pLSSBGk71aUnPvlBE7YY9p_rjtGVuhot_Se6SniWxQIuRPoCZeEnMsEm6sdfNdyAEuXw_AJF5_9qIGOS7M5aGnUJZxJjnG9RW3ZRqAXiU5D2sZk-PLvW8GhWhb4CClrFkjjlPOUV6ismk"/><div class="flex flex-col"><span class="font-headline-sm text-headline-sm uppercase tracking-wider text-on-surface font-semibold">DINAR FOTOCOPY</span><div class="hidden sm:inline-flex items-center gap-space-xs mt-0.5 px-2 py-0.5 rounded-full bg-surface-container-high/80 text-lumia-emerald font-label-caps text-label-caps uppercase"><span class="w-1.5 h-1.5 rounded-full bg-lumia-emerald animate-pulse"></span>Buka Hari Ini 08.00 - 21.00 WIB</div></div></div><nav class="hidden xl:flex items-center gap-space-sm" data-active-classes="bg-primary-container text-on-primary-container font-semibold rounded-xl px-3 py-1.5 shadow-[0_0_15px_rgba(0,164,239,0.35)]"><a aria-current="page" class="transition-all bg-primary-container text-on-primary-container font-semibold rounded-xl px-3 py-1.5 shadow-[0_0_15px_rgba(0,164,239,0.35)]" data-path="beranda" href="#">Beranda</a><a class="px-3 py-1.5 rounded-xl text-on-surface-variant hover:text-on-surface hover:bg-glass-surface transition-all font-body-sm text-body-sm" data-path="layanan-dan-harga" href="#">Layanan &amp; Harga</a><a class="px-3 py-1.5 rounded-xl text-on-surface-variant hover:text-on-surface hover:bg-glass-surface transition-all font-body-sm text-body-sm" data-path="produk-atk" href="#">Produk ATK</a><a class="px-3 py-1.5 rounded-xl text-on-surface-variant hover:text-on-surface hover:bg-glass-surface transition-all font-body-sm text-body-sm" data-path="kalkulator-estimasi" href="#">Kalkulator Estimasi</a><a class="px-3 py-1.5 rounded-xl text-on-surface-variant hover:text-on-surface hover:bg-glass-surface transition-all font-body-sm text-body-sm" data-path="status-dan-tracking" href="#">Status &amp; Tracking</a><a class="px-3 py-1.5 rounded-xl text-on-surface-variant hover:text-on-surface hover:bg-glass-surface transition-all font-body-sm text-body-sm" data-path="tentang-dan-kontak" href="#">Tentang &amp; Kontak</a></nav><div class="flex items-center gap-space-md shrink-0"><a class="hidden md:inline-flex items-center gap-space-xs px-3.5 py-2 rounded-xl bg-primary-container text-on-primary-container font-label-caps text-label-caps tracking-wider uppercase shadow-[0_2px_12px_rgba(0,164,239,0.3)] hover:brightness-110 active:scale-95 transition-all" href="https://wa.me/628123456789" target="_blank"><span class="material-symbols-outlined text-base">chat</span>WhatsApp</a><a class="relative p-2 rounded-xl bg-surface-container-high/80 text-on-surface-variant hover:text-on-surface hover:bg-surface-container-highest transition-colors" data-path="keranjang-belanja" href="#"><span class="material-symbols-outlined text-xl">shopping_cart</span><span class="absolute -top-1 -right-1 flex h-4 min-w-4 px-1 items-center justify-center rounded-full bg-lumia-coral text-[10px] font-bold text-on-surface shadow-[0_0_8px_rgba(255,59,48,0.6)]">3</span></a><div class="flex items-center pl-space-xs"><img alt="Profile" class="w-8 h-8 rounded-full object-cover shadow-[0_0_0_2px_rgba(0,164,239,0.4)]" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAr4TXD7BkX5PhJGnqAjJDypJhoDkWd1n4bMCRYJxU6H7CrI1DiQEPD6GY9Wrqs6TM83xh0HQJVXRzMKb2NcWtJQSP-ocq_31Og2nVxz4NmAfwnICIXoxd3my_SagAGwn-7uBEDAjAqw3iZybm8e_STswkxE6D7NnftBX0fmk-uSYs-bqEYKmn_GI5ePcR53qUr0Kcsaqy1oEY5X4hVoAT--nMJHMNlYKuxv33xqpaYTRY0VTUYdJ9u"/></div></div></div></header><main class="w-full pt-20 bg-surface min-h-[calc(100vh-20rem)]"><div class="flex flex-col w-full">
+<section class="relative w-full overflow-hidden px-4 sm:px-6 lg:px-12 py-space-lg">
+<div class="max-w-7xl mx-auto flex flex-col gap-space-lg">
+<!-- Breadcrumb Bar & Quick Live Metro Status -->
+<div class="flex flex-wrap items-center justify-between gap-space-sm bg-surface-container-low/70 backdrop-blur-md px- space-md py- space-sm rounded-lg shadow-sm">
+<div class="flex items-center gap-space-xs font-label-caps text-label-caps uppercase tracking-wider text-on-surface-variant">
+<span class="text-lumia-cyan">DINAR METRO</span>
+<span>/</span>
+<span class="text-on-surface">PUSAT KONTROL &amp; LAYANAN CETAK</span>
+</div>
+<div class="flex items-center gap-space-md">
+<div class="flex items-center gap-space-xs">
+<span class="w-2 h-2 rounded-full bg-lumia-emerald animate-ping"></span>
+<span class="font-label-caps text-label-caps uppercase text-lumia-emerald">MESIN READY 120 PPM</span>
+</div>
+<div class="hidden md:flex items-center gap-space-xs text-on-surface-variant font-label-caps text-label-caps uppercase">
+<span class="material-symbols-outlined text-sm text-lumia-amber">speed</span>
+<span>Rerata Cetak: 4.8 Menit</span>
+</div>
+</div>
+</div>
+<!-- Main Asymmetric Metro Bento Grid -->
+<div class="grid grid-cols-1 md:grid-cols-6 lg:grid-cols-12 gap-space-md">
+<!-- 1. Hero Wide Panoramic Live Tile (4x2 / 8-cols on LG) -->
+<div class="md:col-span-6 lg:col-span-8 relative overflow-hidden rounded-lg bg-surface-container-low shadow-xl min-h-[380px] flex flex-col justify-between p- space-lg group">
+<!-- Translucent Backdrop with Atmospheric Depth & High-res image scrim -->
+<div class="absolute inset-0 bg-cover bg-center mix-blend-luminosity opacity-25 group-hover:scale-105 transition-transform duration-700 ease-out" data-alt="High speed modern printing press and photocopier production facility in Bandung with vibrant cyan and violet neon ambient backlights, fresh stacks of sharp documents and architectural blueprints with smooth shallow depth of field" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAXeuOs02tewQcecYe1ZnC0jXHpawj04UsIIvoBCF5W5nWP1MvayjYgTsX03Xu9RFI12FQHUugiEEf30wBgf-jA1_6LYiq-z_mRVG2ku47M2Qf_YvrFDudjK3IL--mVwHZ0xxjxkOZl_dlRHPzZiG1PK3_QsR3lyYP1HYJeQdxchUPy2n3s50j_L-i6UMWznKCsmWhXBf0iBlsHK6GB2LPdRSSix7sDcEm0SQyBhETGx8dDA_ijX3Pn')"></div>
+<div class="absolute inset-0 bg-gradient-to-r from-deep-purple-start/95 via-deep-purple-mid/90 to-lumia-cobalt/40"></div>
+<!-- Top Meta Bar inside Hero Tile -->
+<div class="relative z-10 flex items-start justify-between">
+<div class="flex items-center gap-space-xs px-2.5 py-1 rounded-lg bg-glass-surface backdrop-blur-lg">
+<span class="material-symbols-outlined text-sm text-lumia-cyan">verified</span>
+<span class="font-label-caps text-label-caps uppercase tracking-widest text-on-surface font-semibold">EST. 2015 • BANDUNG</span>
+</div>
+<!-- Lumia Carousel Pagination Dots Indicator -->
+<div class="flex items-center gap-1.5 bg-black/40 px-2.5 py-1 rounded-full">
+<span class="w-2.5 h-2.5 rounded-full bg-lumia-cyan"></span>
+<span class="w-1.5 h-1.5 rounded-full bg-white/40"></span>
+<span class="w-1.5 h-1.5 rounded-full bg-white/40"></span>
+<span class="w-1.5 h-1.5 rounded-full bg-white/40"></span>
+</div>
+</div>
+<!-- Central Title & Value Proposition -->
+<div class="relative z-10 my-auto py-space-sm max-w-2xl">
+<span class="font-label-caps text-label-caps text-lumia-cyan tracking-widest uppercase mb-space-xs block">KEANDALAN DOKUMEN PREMISE</span>
+<h1 class="font-display-hero text-display-hero font-light tracking-tight text-on-surface leading-none">
+              Cetak Cepat, <span class="font-semibold text-primary">Presisi</span> &amp; Rapi.
+            </h1>
+<p class="mt-space-xs font-body-md text-body-md text-on-surface-variant max-w-xl">
+              Spesialis cetak kilat, fotokopi volume tinggi, jilid skripsi hardcover, hingga media promosi outdoor dengan standar kualitas warna CMYK terkalibrasi.
+            </p>
+</div>
+<!-- Bottom Metric & Action Bar inside Tile -->
+<div class="relative z-10 pt-space-md mt-space-sm bg-surface-container-highest/60 -mx- space-lg -mb- space-lg px- space-lg py- space-sm backdrop-blur-xl flex flex-wrap items-center justify-between gap-space-md">
+<div class="flex items-center gap-space-lg">
+<div class="flex flex-col">
+<span class="font-tile-stat text-tile-stat text-on-surface font-light leading-none">80<span class="text-lumia-cyan font-normal">%</span></span>
+<span class="font-label-caps text-label-caps text-on-surface-variant uppercase tracking-wider mt-0.5">Selesai Hari Ini</span>
+</div>
+<div class="hidden sm:flex flex-col">
+<span class="font-tile-stat text-tile-stat text-lumia-emerald font-light leading-none">0.2<span class="text-xs ml-0.5 uppercase text-on-surface">Detik</span></span>
+<span class="font-label-caps text-label-caps text-on-surface-variant uppercase tracking-wider mt-0.5">Speed per Halaman</span>
+</div>
+</div>
+<div class="flex items-center gap-space-xs">
+<a class="px- space-md py- space-xs rounded-lg bg-primary-container text-on-primary-container font-headline-sm text-sm font-semibold tracking-wide hover:brightness-110 active:scale-95 transition-all flex items-center gap-space-xs shadow-md" href="#kalkulator-cepat">
+<span class="material-symbols-outlined text-base">calculate</span>
+<span>Hitung Biaya</span>
+</a>
+<a class="px- space-md py- space-xs rounded-lg bg-lumia-emerald text-on-surface font-headline-sm text-sm font-semibold tracking-wide hover:brightness-110 active:scale-95 transition-all flex items-center gap-space-xs shadow-md" href="https://wa.me/628123456789?text=Halo%20Dinar%20Fotocopy,%20saya%20ingin%20tanya%20cetak%20dokumen" target="_blank">
+<span class="material-symbols-outlined text-base">chat</span>
+<span>Order WA</span>
+</a>
+</div>
+</div>
+</div>
+<!-- 2. Store Status & Real-Time Operational Tile (4-cols on LG) -->
+<div class="md:col-span-6 lg:col-span-4 rounded-lg bg-deep-purple-mid p- space-md flex flex-col justify-between shadow-xl relative overflow-hidden">
+<div class="flex items-start justify-between">
+<div class="flex flex-col">
+<span class="font-label-caps text-label-caps text-lumia-cyan uppercase tracking-widest">STORE PULSE</span>
+<span class="font-headline-md text-headline-md text-on-surface font-semibold">Dinar Hub Melati</span>
+</div>
+<div class="w-10 h-10 rounded-lg bg-surface-container flex items-center justify-center text-lumia-cyan shadow-inner">
+<span class="material-symbols-outlined text-2xl">storefront</span>
+</div>
+</div>
+<!-- Mini Live Weather & Atmosphere Widget (Nod to reference UI) -->
+<div class="my-space-sm p-space-sm rounded-lg bg-surface-container-low/90 backdrop-blur-md flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-lumia-amber text-3xl">wb_sunny</span>
+<div class="flex flex-col">
+<span class="font-headline-sm text-headline-sm font-light text-on-surface">28°C</span>
+<span class="font-label-caps text-label-caps text-on-surface-variant uppercase">Bandung Cerah</span>
+</div>
+</div>
+<div class="flex flex-col text-right">
+<span class="font-label-caps text-label-caps text-lumia-emerald uppercase font-semibold">Toko Buka</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Hingga 21:00 WIB</span>
+</div>
+</div>
+<!-- Real-Time Production Gauge -->
+<div class="space-y-space-xs">
+<div class="flex justify-between items-center text-body-sm font-body-sm">
+<span class="text-on-surface-variant flex items-center gap-1">
+<span class="w-2 h-2 rounded-full bg-lumia-cyan animate-pulse"></span>
+                Antrean Cetak Aktif
+              </span>
+<span class="font-semibold text-on-surface">3 Pesanan</span>
+</div>
+<div class="w-full bg-surface-container h-2 rounded-full overflow-hidden">
+<div class="bg-lumia-cyan h-full rounded-full w-2/5 transition-all duration-500"></div>
+</div>
+<div class="flex justify-between text-label-caps font-label-caps text-on-surface-variant">
+<span>Estimasi Tunggu: ≤ 10 Mnt</span>
+<span class="text-lumia-emerald">Normal Load</span>
+</div>
+</div>
+<!-- Direct Location Action -->
+<div class="mt-space-sm pt-space-xs flex items-center justify-between text-body-sm">
+<div class="flex items-center gap-space-xs text-on-surface-variant">
+<span class="material-symbols-outlined text-sm text-lumia-coral">location_on</span>
+<span>Jl. Melati No. 22</span>
+</div>
+<a class="font-label-caps text-label-caps uppercase text-lumia-cyan hover:underline font-semibold flex items-center gap-0.5" href="https://maps.google.com" target="_blank">
+              Rute <span class="material-symbols-outlined text-xs">arrow_outward</span>
+</a>
+</div>
+</div>
+<!-- 3. Colorful Lumia Service Tiles (Cyan, Cobalt, Coral, Amber, Emerald) -->
+<!-- Service Tile 1: Fotokopi & Print A4/F4 (Cyan Blue #00A4EF Solid Flat Metro) -->
+<div class="md:col-span-3 lg:col-span-3 min-h-[170px] rounded-lg bg-primary-container text-on-primary-container p- space-md flex flex-col justify-between shadow-lg hover:brightness-105 transition-all group cursor-pointer relative overflow-hidden">
+<div class="flex items-start justify-between">
+<span class="material-symbols-outlined text-3xl font-light text-on-primary-container group-hover:scale-110 transition-transform">print</span>
+<span class="px-2 py-0.5 rounded bg-white/20 text-on-primary-container font-label-caps text-label-caps uppercase tracking-wider">Populer</span>
+</div>
+<div>
+<h3 class="font-headline-md text-headline-md font-semibold leading-snug">Fotokopi &amp; Print A4/F4</h3>
+<p class="font-body-sm text-body-sm text-on-primary-container/85 mt-0.5">B/W &amp; Full Color LaserJet</p>
+<div class="mt-space-xs pt-space-xs flex items-baseline justify-between">
+<span class="font-label-caps text-label-caps uppercase text-on-primary-container/70">Mulai Dari</span>
+<span class="font-price-display text-lg font-bold">Rp 300<span class="text-xs font-normal">/lbr</span></span>
+</div>
+</div>
+</div>
+<!-- Service Tile 2: Jilid & Laminating (Coral Red #FF3B30 Solid Metro) -->
+<div class="md:col-span-3 lg:col-span-3 min-h-[170px] rounded-lg bg-lumia-coral text-white p- space-md flex flex-col justify-between shadow-lg hover:brightness-105 transition-all group cursor-pointer relative overflow-hidden">
+<div class="flex items-start justify-between">
+<span class="material-symbols-outlined text-3xl font-light text-white group-hover:scale-110 transition-transform">auto_stories</span>
+<div class="w-6 h-6 rounded-full bg-white/20 flex items-center justify-center font-label-caps text-xs font-bold">5</div>
+</div>
+<div>
+<h3 class="font-headline-md text-headline-md font-semibold leading-snug">Jilid &amp; Laminasi</h3>
+<p class="font-body-sm text-body-sm text-white/85 mt-0.5">Spiral Kawat, Mika, &amp; Skripsi</p>
+<div class="mt-space-xs pt-space-xs flex items-baseline justify-between">
+<span class="font-label-caps text-label-caps uppercase text-white/70">Hardcover Mulai</span>
+<span class="font-price-display text-lg font-bold">Rp 25.000<span class="text-xs font-normal">/buku</span></span>
+</div>
+</div>
+</div>
+<!-- Service Tile 3: Cetak Foto & Banner Outdoor (Deep Purple/Cobalt) -->
+<div class="md:col-span-3 lg:col-span-3 min-h-[170px] rounded-lg bg-lumia-cobalt text-white p- space-md flex flex-col justify-between shadow-lg hover:brightness-105 transition-all group cursor-pointer relative overflow-hidden">
+<div class="flex items-start justify-between">
+<span class="material-symbols-outlined text-3xl font-light text-white group-hover:scale-110 transition-transform">panorama</span>
+<span class="material-symbols-outlined text-white/50 text-base">arrow_forward</span>
+</div>
+<div>
+<h3 class="font-headline-md text-headline-md font-semibold leading-snug">Banner &amp; Foto HD</h3>
+<p class="font-body-sm text-body-sm text-white/85 mt-0.5">Flexi 340gsm, X-Banner, Pasfoto</p>
+<div class="mt-space-xs pt-space-xs flex items-baseline justify-between">
+<span class="font-label-caps text-label-caps uppercase text-white/70">Harga Meteran</span>
+<span class="font-price-display text-lg font-bold">Rp 25.000<span class="text-xs font-normal">/m²</span></span>
+</div>
+</div>
+</div>
+<!-- Service Tile 4: Scan Dokumen & Digitalisasi (Warm Amber #F59E0B) -->
+<div class="md:col-span-3 lg:col-span-3 min-h-[170px] rounded-lg bg-lumia-amber text-deep-purple-end p- space-md flex flex-col justify-between shadow-lg hover:brightness-105 transition-all group cursor-pointer relative overflow-hidden">
+<div class="flex items-start justify-between">
+<span class="material-symbols-outlined text-3xl font-light text-deep-purple-end group-hover:scale-110 transition-transform">document_scanner</span>
+<span class="px-2 py-0.5 rounded bg-black/15 font-label-caps text-label-caps uppercase tracking-wider text-deep-purple-end font-semibold">ADF High Speed</span>
+</div>
+<div>
+<h3 class="font-headline-md text-headline-md font-bold leading-snug text-deep-purple-end">Scan &amp; Arsip PDF</h3>
+<p class="font-body-sm text-body-sm text-deep-purple-end/80 mt-0.5">Scan cepat 600dpi OCR siap kirim</p>
+<div class="mt-space-xs pt-space-xs flex items-baseline justify-between">
+<span class="font-label-caps text-label-caps uppercase text-deep-purple-end/70">Tarif Scan</span>
+<span class="font-price-display text-lg font-bold">Rp 1.000<span class="text-xs font-normal">/dokumen</span></span>
+</div>
+</div>
+</div>
+<!-- 4. Interactive Quick Calculator Live Tile (Large 7-cols on LG) -->
+<div class="md:col-span-6 lg:col-span-7 rounded-lg bg-surface-container p- space-lg shadow-xl flex flex-col justify-between" id="kalkulator-cepat">
+<div>
+<div class="flex items-center justify-between mb-space-md">
+<div class="flex items-center gap-space-xs">
+<div class="w-8 h-8 rounded-lg bg-primary-container text-on-primary-container flex items-center justify-center">
+<span class="material-symbols-outlined text-lg">calculate</span>
+</div>
+<div>
+<h2 class="font-headline-sm text-headline-sm text-on-surface font-semibold">Kalkulator Estimasi Instan</h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Simulasikan rincian pesanan dan kirim langsung ke WhatsApp</p>
+</div>
+</div>
+<span class="hidden sm:inline-block px-2.5 py-1 rounded bg-surface-container-high text-lumia-cyan font-label-caps text-label-caps uppercase font-bold">Real-Time Tariff</span>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-space-md">
+<!-- Service Mode -->
+<div class="space-y-space-xs">
+<label class="font-label-caps text-label-caps uppercase text-on-surface-variant">Jenis Layanan</label>
+<div class="grid grid-cols-2 gap-1 p-1 rounded-lg bg-surface-container-lowest">
+<button class="py-1.5 px-2 rounded font-body-sm text-sm text-center font-semibold bg-primary-container text-on-primary-container transition-all" id="btn-mode-print" onclick="setServiceMode('print')">Print Baru</button>
+<button class="py-1.5 px-2 rounded font-body-sm text-sm text-center font-normal text-on-surface-variant hover:text-on-surface transition-all" id="btn-mode-copy" onclick="setServiceMode('copy')">Fotokopi</button>
+</div>
+</div>
+<!-- Color vs BW -->
+<div class="space-y-space-xs">
+<label class="font-label-caps text-label-caps uppercase text-on-surface-variant">Warna Cetak</label>
+<div class="grid grid-cols-2 gap-1 p-1 rounded-lg bg-surface-container-lowest">
+<button class="py-1.5 px-2 rounded font-body-sm text-sm text-center font-semibold bg-primary-container text-on-primary-container transition-all" id="btn-color-bw" onclick="setColorMode('bw')">Hitam Putih</button>
+<button class="py-1.5 px-2 rounded font-body-sm text-sm text-center font-normal text-on-surface-variant hover:text-on-surface transition-all" id="btn-color-fc" onclick="setColorMode('fc')">Warna (FC)</button>
+</div>
+</div>
+<!-- Paper Size -->
+<div class="space-y-space-xs">
+<label class="font-label-caps text-label-caps uppercase text-on-surface-variant">Ukuran &amp; Gramatur Kertas</label>
+<select class="w-full bg-surface-container-lowest text-on-surface text-body-sm font-body-sm rounded-lg px-3 py-2 outline-none focus:bg-surface-container-high transition-all" id="select-paper" onchange="calculatePrice()">
+<option value="A4-75">A4 75gsm (Standar Dokumen)</option>
+<option value="A4-80">A4 80gsm (Skripsi / Laporan)</option>
+<option value="F4-75">F4 / Folio 75gsm</option>
+<option value="A3-80">A3 80gsm (Gambar Teknik / Chart)</option>
+<option value="AP-230">Art Paper 230gsm (Sertifikat / Cover)</option>
+</select>
+</div>
+<!-- Finishing Option -->
+<div class="space-y-space-xs">
+<label class="font-label-caps text-label-caps uppercase text-on-surface-variant">Finishing / Penjilidan</label>
+<select class="w-full bg-surface-container-lowest text-on-surface text-body-sm font-body-sm rounded-lg px-3 py-2 outline-none focus:bg-surface-container-high transition-all" id="select-finishing" onchange="calculatePrice()">
+<option value="none">Tanpa Jilid (Staples Biasa)</option>
+<option value="staples-mika">Jilid Staples Lakban + Cover Mika (+Rp 3.500)</option>
+<option value="spiral-kawat">Jilid Spiral Kawat Metal (+Rp 8.000)</option>
+<option value="hardcover">Jilid Hardcover Skripsi Emas (+Rp 25.000)</option>
+<option value="laminasi">Laminasi Panas Glossy/Doff (+Rp 3.000)</option>
+</select>
+</div>
+</div>
+<!-- Quantity Stepper -->
+<div class="mt-space-md flex flex-wrap items-center justify-between gap-space-md p-space-sm rounded-lg bg-surface-container-lowest">
+<div>
+<span class="font-label-caps text-label-caps uppercase text-on-surface-variant block">Jumlah Lembar</span>
+<span class="font-body-sm text-body-sm text-on-surface">Input kuantitas halaman</span>
+</div>
+<div class="flex items-center gap-space-xs">
+<button class="w-9 h-9 rounded-lg bg-surface-container hover:bg-surface-container-high text-on-surface font-bold text-lg flex items-center justify-center transition-all" onclick="adjustQty(-10)" type="button">-</button>
+<input class="w-20 bg-surface-container-high text-center font-headline-sm text-headline-sm font-semibold text-lumia-cyan rounded-lg py-1 outline-none" id="input-qty" min="1" oninput="calculatePrice()" type="number" value="50"/>
+<button class="w-9 h-9 rounded-lg bg-surface-container hover:bg-surface-container-high text-on-surface font-bold text-lg flex items-center justify-center transition-all" onclick="adjustQty(10)" type="button">+</button>
+</div>
+</div>
+</div>
+<!-- Total Calculation Bar & Action -->
+<div class="mt-space-lg pt-space-md bg-surface-container-high/60 -mx-space-lg -mb-space-lg p-space-lg rounded-b-lg flex flex-wrap items-center justify-between gap-space-md">
+<div>
+<span class="font-label-caps text-label-caps uppercase text-on-surface-variant block">Total Estimasi Transparan</span>
+<div class="flex items-baseline gap-space-xs">
+<span class="font-price-display text-price-display text-lumia-emerald font-bold" id="display-total">Rp 17.500</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant font-mono" id="display-unit">(@ Rp 350 / lbr)</span>
+</div>
+</div>
+<button class="px-space-md py- space-sm rounded-lg bg-lumia-emerald text-on-surface font-headline-sm text-sm font-semibold tracking-wide hover:brightness-110 active:scale-95 transition-all flex items-center gap-space-xs shadow-lg" onclick="sendQuotationWA()" type="button">
+<span class="material-symbols-outlined text-lg">send</span>
+<span>Kirim Draft via WA</span>
+</button>
+</div>
+</div>
+<!-- 5. Live Document Tracking & Quick Search Tile (5-cols on LG) -->
+<div class="md:col-span-6 lg:col-span-5 rounded-lg bg-surface-container p- space-md flex flex-col justify-between shadow-xl">
+<div>
+<div class="flex items-start justify-between">
+<div>
+<span class="font-label-caps text-label-caps text-lumia-cyan uppercase tracking-wider">LIVE STATUS TRACKER</span>
+<h3 class="font-headline-md text-headline-md text-on-surface font-semibold">Lacak Pesanan Anda</h3>
+</div>
+<div class="w-9 h-9 rounded-lg bg-surface-container-high flex items-center justify-center text-lumia-cyan">
+<span class="material-symbols-outlined text-xl">qr_code_scanner</span>
+</div>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">Masukkan ID Nota / WhatsApp untuk cek status pengerjaan dokumen.</p>
+<!-- Search Field -->
+<div class="mt-space-sm flex gap-space-xs">
+<input class="flex-1 bg-surface-container-lowest text-on-surface px-3 py-2 rounded-lg text-body-sm font-mono outline-none" id="track-input" placeholder="Contoh: DF-2401" type="text" value="DF-2401"/>
+<button class="px- space-md bg-primary-container text-on-primary-container font-headline-sm text-sm font-semibold rounded-lg hover:brightness-110 transition-all flex items-center gap-1" onclick="handleTrackSearch()">
+<span class="material-symbols-outlined text-base">search</span>
+<span>Cek</span>
+</button>
+</div>
+<!-- Active Order Card Preview -->
+<div class="mt-space-md p-space-sm rounded-lg bg-surface-container-lowest space-y-space-xs">
+<div class="flex items-center justify-between">
+<span class="font-mono text-body-sm font-semibold text-primary">#DF-240198</span>
+<span class="px-2 py-0.5 rounded-full bg-lumia-cyan/20 text-lumia-cyan font-label-caps text-label-caps uppercase font-semibold">Sedang Dicetak</span>
+</div>
+<div class="font-body-sm text-body-sm text-on-surface">Jilid Hardcover Skripsi TI (3 Eks)</div>
+<div class="font-body-sm text-xs text-on-surface-variant">Pemesan: Rizky Fadillah • Masuk: 14:10 WIB</div>
+<!-- Metro Step Bar -->
+<div class="grid grid-cols-4 gap-1 pt-space-xs">
+<div class="h-1.5 rounded-full bg-lumia-emerald"></div>
+<div class="h-1.5 rounded-full bg-lumia-cyan animate-pulse"></div>
+<div class="h-1.5 rounded-full bg-surface-container-highest"></div>
+<div class="h-1.5 rounded-full bg-surface-container-highest"></div>
+</div>
+<div class="flex justify-between text-label-caps font-label-caps text-on-surface-variant text-[10px]">
+<span class="text-lumia-emerald">Penerimaan</span>
+<span class="text-lumia-cyan font-bold">Produksi (65%)</span>
+<span>Quality Cek</span>
+<span>Siap Ambil</span>
+</div>
+</div>
+</div>
+<!-- Quick Drop Target Shortcut -->
+<div class="mt-space-sm p-space-sm rounded-lg bg-surface-container-high/40 flex items-center justify-between text-body-sm">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-lumia-amber">cloud_upload</span>
+<span class="text-on-surface-variant">Kirim file PDF lewat WhatsApp?</span>
+</div>
+<a class="font-label-caps text-label-caps uppercase text-lumia-amber font-bold hover:underline" href="https://wa.me/628123456789?text=Halo%20Dinar,%20saya%20kirim%20file%20untuk%20dicetak" target="_blank">Kirim File</a>
+</div>
+</div>
+<!-- 6. ATK & Stationary Quick Showcase Tile (Emerald Green #10B981) -->
+<div class="md:col-span-3 lg:col-span-4 rounded-lg bg-lumia-emerald text-on-surface p- space-md flex flex-col justify-between shadow-xl relative overflow-hidden group">
+<div class="flex items-start justify-between">
+<div>
+<span class="font-label-caps text-label-caps uppercase tracking-wider text-white/80">KATALOG ATK LENGKAP</span>
+<h3 class="font-headline-md text-headline-md font-bold text-white leading-snug">Stationery &amp; Kertas</h3>
+</div>
+<div class="w-10 h-10 rounded-lg bg-black/20 flex items-center justify-center text-white">
+<span class="material-symbols-outlined text-2xl">edit_note</span>
+</div>
+</div>
+<div class="my-space-sm space-y-1.5 font-body-sm text-sm text-white/90">
+<div class="flex justify-between py-1 bg-black/10 px-2 rounded">
+<span>PaperOne A4 75gsm (Rim)</span>
+<span class="font-semibold text-white">Rp 48.000</span>
+</div>
+<div class="flex justify-between py-1 bg-black/10 px-2 rounded">
+<span>Map Snellhecter Plastik</span>
+<span class="font-semibold text-white">Rp 4.500</span>
+</div>
+<div class="flex justify-between py-1 bg-black/10 px-2 rounded">
+<span>Bolpoin Pilot G2 0.5 Black</span>
+<span class="font-semibold text-white">Rp 16.000</span>
+</div>
+</div>
+<div class="flex items-center justify-between pt-space-xs">
+<span class="font-label-caps text-label-caps uppercase text-white/75">Ready Stock • Grosir / Ecer</span>
+<a class="px-3 py-1 rounded bg-white text-deep-purple-end font-label-caps text-label-caps uppercase font-bold hover:bg-white/90 transition-all flex items-center gap-1" data-path="produk-atk" href="#">
+              Lihat Katalog
+              <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</a>
+</div>
+</div>
+<!-- 7. Media & Customer Audio-Vibe Style Live Tile (Arctic Monkeys nod in Reference UI) -->
+<div class="md:col-span-3 lg:col-span-4 rounded-lg bg-surface-container-low p-space-md flex flex-col justify-between shadow-xl relative overflow-hidden">
+<div class="flex items-center justify-between">
+<span class="font-label-caps text-label-caps text-lumia-cyan uppercase tracking-wider">KOMITMEN LAYANAN</span>
+<span class="material-symbols-outlined text-lumia-emerald text-base">verified</span>
+</div>
+<div class="my-space-xs flex items-center gap-space-md">
+<div class="w-14 h-14 rounded-lg overflow-hidden shrink-0 shadow-md">
+<img class="w-full h-full object-cover" data-alt="Portrait photo of smiling student customer receiving hardbound golden thesis and neatly packed presentation documents in high quality packaging at Dinar Fotocopy store" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCjFNQd5wggsdst7PwS_2Bn_U53fRvSoYi8NpnR-UINIf_VLrcOJA4FkTvfDWzsooyA1mrSdy6N3uKQvuejl1ZG_2C3S57cSu43vz7DVgUm3-iaX7YcbMnXBfqejCJhoTJKNlNsqrLMoFmx6KcAZyA2N7ALccLl6u1yQUMy60sp981VMF8ni2UDShvunC5E-AOYUXyO9oyDeb_HgwuSUSOqr50PfpHUcp9nj1dNB9GXUWOnWfcTlQAP"/>
+</div>
+<div>
+<div class="font-headline-sm text-headline-sm text-on-surface font-semibold">Garansi Cetak Ulang</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-2">Jika hasil buram, miring, atau salah tinta, kami ganti cetak 100% gratis seketika.</p>
+</div>
+</div>
+<div class="p-2 rounded bg-surface-container-lowest flex items-center justify-between text-body-sm text-xs text-on-surface-variant">
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-sm text-lumia-amber">star</span> Rating Google 4.9/5 (480+ Ulasan)</span>
+<span class="text-primary font-semibold">Terverifikasi</span>
+</div>
+</div>
+<!-- 8. Live Customer Ticker Feed Tile (Like social feed in reference) -->
+<div class="md:col-span-6 lg:col-span-4 rounded-lg bg-deep-purple-mid p-space-md flex flex-col justify-between shadow-xl relative overflow-hidden">
+<div class="flex items-center justify-between mb-space-xs">
+<div class="flex items-center gap-space-xs">
+<span class="w-2.5 h-2.5 rounded-full bg-lumia-coral animate-ping"></span>
+<span class="font-label-caps text-label-caps uppercase tracking-wider text-on-surface font-semibold">ANTREAN REAL-TIME</span>
+</div>
+<span class="font-mono text-label-caps text-lumia-cyan uppercase">LIVE METRO FEED</span>
+</div>
+<div class="space-y-2" id="feed-container">
+<div class="p-2 rounded bg-surface-container flex items-center justify-between text-body-sm">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-lumia-emerald text-sm">check_circle</span>
+<span class="text-on-surface font-mono text-xs">DF-250120-089</span>
+</div>
+<span class="text-on-surface-variant text-xs">Print Poster A3 Selesai</span>
+</div>
+<div class="p-2 rounded bg-surface-container flex items-center justify-between text-body-sm">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-lumia-cyan text-sm">sync</span>
+<span class="text-on-surface font-mono text-xs">DF-250120-090</span>
+</div>
+<span class="text-lumia-cyan text-xs">Fotokopi 200 Lbr (Proses)</span>
+</div>
+<div class="p-2 rounded bg-surface-container flex items-center justify-between text-body-sm">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-lumia-amber text-sm">pending</span>
+<span class="text-on-surface font-mono text-xs">DF-250120-091</span>
+</div>
+<span class="text-on-surface-variant text-xs">Jilid Spiral (Dalam Antrean)</span>
+</div>
+</div>
+<div class="mt-space-xs flex items-center justify-between font-label-caps text-label-caps text-on-surface-variant pt-2">
+<span>Pembaruan otomatis tiap 30 dtk</span>
+<span class="text-lumia-emerald flex items-center gap-1"><span class="w-1.5 h-1.5 rounded-full bg-lumia-emerald"></span> Aktif</span>
+</div>
+</div>
+</div>
+<!-- Quick Fast Action Metro Strip Banner -->
+<div class="mt-space-md p-space-md rounded-lg bg-surface-container-high/80 backdrop-blur-md flex flex-wrap items-center justify-between gap-space-md shadow-md">
+<div class="flex items-center gap-space-md">
+<div class="w-12 h-12 rounded-lg bg-lumia-cyan/20 text-lumia-cyan flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-3xl">electric_bolt</span>
+</div>
+<div>
+<h4 class="font-headline-sm text-headline-sm text-on-surface font-semibold">Butuh Cetak Cepat Hari Ini Juga?</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Kirim file PDF via WhatsApp sebelum jam 17:00 untuk pengambilan kilat tanpa antre di toko.</p>
+</div>
+</div>
+<div class="flex items-center gap-space-sm">
+<a class="px- space-lg py- space-sm rounded-lg bg-lumia-emerald text-on-surface font-headline-sm text-sm font-bold tracking-wide hover:brightness-110 active:scale-95 transition-all flex items-center gap-space-xs shadow-md" href="https://wa.me/628123456789?text=Halo%20Dinar%20Fotocopy,%20saya%20punya%20dokumen%20urgent%20mau%20dicetak" target="_blank">
+<span class="material-symbols-outlined text-xl">rocket_launch</span>
+<span>Kirim Dokumen Urgent Sekarang</span>
+</a>
+</div>
+</div>
+</div>
+</section>
+</div>
+<script>
+  let state = {
+    mode: 'print',      // 'print' | 'copy'
+    color: 'bw',        // 'bw' | 'fc'
+    qty: 50,
+    paper: 'A4-75',
+    finishing: 'none'
+  };
+
+  const rates = {
+    copy: {
+      bw: { 'A4-75': 300, 'A4-80': 350, 'F4-75': 350, 'A3-80': 1000, 'AP-230': 3000 },
+      fc: { 'A4-75': 1000, 'A4-80': 1200, 'F4-75': 1300, 'A3-80': 3500, 'AP-230': 5000 }
+    },
+    print: {
+      bw: { 'A4-75': 350, 'A4-80': 400, 'F4-75': 400, 'A3-80': 1500, 'AP-230': 3500 },
+      fc: { 'A4-75': 1200, 'A4-80': 1500, 'F4-75': 1500, 'A3-80': 4000, 'AP-230': 6000 }
+    },
+    finishingFees: {
+      'none': 0,
+      'staples-mika': 3500,
+      'spiral-kawat': 8000,
+      'hardcover': 25000,
+      'laminasi': 3000
+    }
+  };
+
+  function setServiceMode(mode) {
+    state.mode = mode;
+    const btnPrint = document.getElementById('btn-mode-print');
+    const btnCopy = document.getElementById('btn-mode-copy');
+    if (mode === 'print') {
+      btnPrint.className = "py-1.5 px-2 rounded font-body-sm text-sm text-center font-semibold bg-primary-container text-on-primary-container transition-all";
+      btnCopy.className = "py-1.5 px-2 rounded font-body-sm text-sm text-center font-normal text-on-surface-variant hover:text-on-surface transition-all";
+    } else {
+      btnCopy.className = "py-1.5 px-2 rounded font-body-sm text-sm text-center font-semibold bg-primary-container text-on-primary-container transition-all";
+      btnPrint.className = "py-1.5 px-2 rounded font-body-sm text-sm text-center font-normal text-on-surface-variant hover:text-on-surface transition-all";
+    }
+    calculatePrice();
+  }
+
+  function setColorMode(color) {
+    state.color = color;
+    const btnBw = document.getElementById('btn-color-bw');
+    const btnFc = document.getElementById('btn-color-fc');
+    if (color === 'bw') {
+      btnBw.className = "py-1.5 px-2 rounded font-body-sm text-sm text-center font-semibold bg-primary-container text-on-primary-container transition-all";
+      btnFc.className = "py-1.5 px-2 rounded font-body-sm text-sm text-center font-normal text-on-surface-variant hover:text-on-surface transition-all";
+    } else {
+      btnFc.className = "py-1.5 px-2 rounded font-body-sm text-sm text-center font-semibold bg-primary-container text-on-primary-container transition-all";
+      btnBw.className = "py-1.5 px-2 rounded font-body-sm text-sm text-center font-normal text-on-surface-variant hover:text-on-surface transition-all";
+    }
+    calculatePrice();
+  }
+
+  function adjustQty(amount) {
+    const input = document.getElementById('input-qty');
+    let current = parseInt(input.value, 10) || 1;
+    current = Math.max(1, current + amount);
+    input.value = current;
+    calculatePrice();
+  }
+
+  function calculatePrice() {
+    const qtyInput = document.getElementById('input-qty');
+    state.qty = Math.max(1, parseInt(qtyInput.value, 10) || 1);
+    state.paper = document.getElementById('select-paper').value;
+    state.finishing = document.getElementById('select-finishing').value;
+
+    const unitRate = rates[state.mode][state.color][state.paper] || 350;
+    const finishingCost = rates.finishingFees[state.finishing] || 0;
+    const printSubtotal = unitRate * state.qty;
+    const grandTotal = printSubtotal + finishingCost;
+
+    const formatter = new Intl.NumberFormat('id-ID');
+    document.getElementById('display-total').innerText = 'Rp ' + formatter.format(grandTotal);
+    document.getElementById('display-unit').innerText = '(@ Rp ' + formatter.format(unitRate) + ' / lbr' + (finishingCost > 0 ? ' + Jilid Rp ' + formatter.format(finishingCost) : '') + ')';
+  }
+
+  function sendQuotationWA() {
+    const unitRate = rates[state.mode][state.color][state.paper] || 350;
+    const finishingCost = rates.finishingFees[state.finishing] || 0;
+    const total = (unitRate * state.qty) + finishingCost;
+    const formatter = new Intl.NumberFormat('id-ID');
+
+    const msg = `Halo Dinar Fotocopy, saya ingin order via web:%0A- Layanan: ${state.mode === 'print' ? 'Print Dokumen' : 'Fotokopi'}%0A- Tipe Warna: ${state.color === 'bw' ? 'Hitam Putih' : 'Full Color'}%0A- Kertas: ${state.paper}%0A- Finishing: ${state.finishing}%0A- Kuantitas: ${state.qty} Lembar%0A- Estimasi Biaya: Rp ${formatter.format(total)}%0AMohon konfirmasi dan info pengiriman filenya. Terima kasih!`;
+    window.open(`https://wa.me/628123456789?text=${msg}`, '_blank');
+  }
+
+  function handleTrackSearch() {
+    const input = document.getElementById('track-input');
+    const val = input.value.trim();
+    if (!val) {
+      alert('Silakan masukkan nomor resi atau ID nota.');
+      return;
+    }
+    alert(`Mencari status nota ${val}... Pesanan terdaftar dan sedang dalam proses finishing.`);
+  }
+
+  // Initialize calculation on DOM ready
+  if (document.readyState === 'complete' || document.readyState === 'interactive') {
+    calculatePrice();
+  } else {
+    document.addEventListener('DOMContentLoaded', calculatePrice);
+  }
+</script></main><footer class="w-full bg-deep-purple-end/95 text-on-surface"><div class="max-w-7xl mx-auto px-6 lg:px-12 py-space-xl"><div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-gutter-lg"><div class="flex flex-col gap-space-sm"><div class="flex items-center gap-space-sm"><img alt="Dinar Fotocopy Lumia Logo" class="h-7 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1VDh339H2rFSV5vAzb9tL7rCfFkpmr4n_8UfoFzZx0FT-tDTtZW-3maSiSa8yy9WYxsWtHxWyTKD5JSNL1DYtu73qVmyUOSjqEUFYzckuXWO_pLSSBGk71aUnPvlBE7YY9p_rjtGVuhot_Se6SniWxQIuRPoCZeEnMsEm6sdfNdyAEuXw_AJF5_9qIGOS7M5aGnUJZxJjnG9RW3ZRqAXiU5D2sZk-PLvW8GhWhb4CClrFkjjlPOUV6ismk"/><span class="font-headline-sm text-headline-sm uppercase tracking-wider text-on-surface font-semibold">DINAR FOTOCOPY</span></div><p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">Pusat fotokopi berkecepatan tinggi, percetakan digital profesional, penjilidan dokumen rapi, dan perlengkapan alat tulis kantor berkualitas.</p><div class="inline-flex items-center gap-space-xs text-lumia-cyan font-label-caps text-label-caps tracking-wider uppercase mt-space-xs"><span class="material-symbols-outlined text-base">verified</span>Kualitas &amp; Kecepatan Metro</div></div><div class="flex flex-col gap-space-sm"><span class="font-headline-sm text-headline-sm text-on-surface font-semibold">Kontak &amp; Alamat</span><ul class="flex flex-col gap-space-xs font-body-sm text-body-sm text-on-surface-variant"><li class="flex items-start gap-space-xs"><span class="material-symbols-outlined text-base text-lumia-cyan mt-0.5 shrink-0">location_on</span><span>Jl. Melati No. 22, Bandung, Jawa Barat 40123</span></li><li class="flex items-center gap-space-xs"><span class="material-symbols-outlined text-base text-lumia-emerald shrink-0">call</span><span>WA: 0812-3456-789</span></li><li class="flex items-center gap-space-xs"><span class="material-symbols-outlined text-base text-lumia-amber shrink-0">mail</span><span>order@dinarfotocopy.com</span></li></ul></div><div class="flex flex-col gap-space-sm"><span class="font-headline-sm text-headline-sm text-on-surface font-semibold">Jam Layanan Toko</span><div class="flex flex-col gap-space-xs font-body-sm text-body-sm text-on-surface-variant"><div class="flex justify-between items-center py-1"><span class="text-on-surface">Senin - Jumat</span><span class="font-semibold text-lumia-cyan">08.00 - 21.00 WIB</span></div><div class="flex justify-between items-center py-1"><span class="text-on-surface">Sabtu</span><span class="font-semibold text-lumia-cyan">08.00 - 18.00 WIB</span></div><div class="flex justify-between items-center py-1"><span class="text-on-surface">Minggu &amp; Libur</span><span class="text-tertiary font-semibold">10.00 - 17.00 WIB</span></div></div><div class="mt-space-xs p-space-sm rounded-xl bg-surface-container-high/60 flex items-center gap-space-xs text-lumia-emerald"><span class="material-symbols-outlined text-base">bolt</span><span class="font-label-caps text-label-caps uppercase">Layanan Cepat Kilat Ready</span></div></div><div class="flex flex-col gap-space-sm"><span class="font-headline-sm text-headline-sm text-on-surface font-semibold">Navigasi Cepat</span><div class="grid grid-cols-2 gap-x-space-md gap-y-space-xs font-body-sm text-body-sm text-on-surface-variant"><a class="hover:text-on-surface transition-colors" data-path="beranda" href="#">Beranda</a><a class="hover:text-on-surface transition-colors" data-path="layanan-dan-harga" href="#">Layanan Cetak</a><a class="hover:text-on-surface transition-colors" data-path="produk-atk" href="#">Katalog ATK</a><a class="hover:text-on-surface transition-colors" data-path="kalkulator-estimasi" href="#">Hitung Biaya</a><a class="hover:text-on-surface transition-colors" data-path="status-dan-tracking" href="#">Lacak Pesanan</a><a class="hover:text-on-surface transition-colors" data-path="tentang-dan-kontak" href="#">Bantuan &amp; FAQ</a></div><div class="mt-space-sm flex gap-space-xs"><a class="flex-1 inline-flex items-center justify-center gap-space-xs py-2 px-3 rounded-xl bg-lumia-emerald text-on-surface font-label-caps text-label-caps tracking-wider uppercase hover:brightness-110 transition-all" href="https://wa.me/628123456789" target="_blank"><span class="material-symbols-outlined text-sm">chat</span>WhatsApp Us</a></div></div></div><div class="mt-space-xl pt-space-lg flex flex-col md:flex-row items-center justify-between gap-space-sm text-on-surface-variant font-body-sm text-body-sm"><p>© 2024 Dinar Fotocopy &amp; Digital Printing. Hak Cipta Dilindungi.</p><div class="flex items-center gap-space-md font-label-caps text-label-caps uppercase tracking-wider"><span class="hover:text-on-surface cursor-pointer transition-colors">Kebijakan Privasi</span><span class="hover:text-on-surface cursor-pointer transition-colors">Syarat Layanan</span><span class="hover:text-on-surface cursor-pointer transition-colors">Garansi Cetak</span></div></div></div></footer></body></html>

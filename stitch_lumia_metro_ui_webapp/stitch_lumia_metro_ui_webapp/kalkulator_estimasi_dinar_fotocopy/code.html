@@ -1,0 +1,699 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="id"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_standard" name="shell-type"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;600;700&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{colors:{"deep-purple-mid":"#100e24","on-primary-container":"#003653","glass-surface-hover":"rgba(255, 255, 255, 0.14)","on-secondary-fixed-variant":"#930005","lumia-emerald":"#10b981","surface-container":"#201e2c","tertiary-fixed":"#ffddb8","lumia-amber":"#f59e0b","on-tertiary-fixed-variant":"#653e00","on-surface":"#e5e0f3","secondary-container":"#c5020b","error":"#ffb4ab","inverse-surface":"#e5e0f3","on-background":"#e5e0f3","surface":"#14121f","outline":"#88929c","primary-container":"#00a4ef","error-container":"#93000a","surface-container-low":"#1c1a27","surface-container-lowest":"#0e0c1a","on-surface-variant":"#bec8d2","primary-fixed":"#cbe6ff","on-error-container":"#ffdad6","on-tertiary-container":"#4a2c00","lumia-cobalt":"#005a9e","glass-border":"rgba(255, 255, 255, 0.18)","tertiary-fixed-dim":"#ffb95f","inverse-primary":"#006494","tertiary":"#ffb95f","on-secondary-fixed":"#410001","deep-purple-end":"#080612","glass-border-bright":"rgba(255, 255, 255, 0.35)","surface-container-high":"#2b2836","glass-surface":"rgba(255, 255, 255, 0.08)","deep-purple-start":"#1b0a2a","surface-dim":"#14121f","on-tertiary":"#472a00","on-tertiary-fixed":"#2a1700","outline-variant":"#3e4851","inverse-on-surface":"#312f3d","secondary-fixed":"#ffdad5","on-error":"#690005","on-secondary":"#690003","surface-container-highest":"#363342","primary-fixed-dim":"#8ecdff","secondary":"#ffb4aa","on-secondary-container":"#ffd2cc","surface-variant":"#363342","on-primary":"#00344f","secondary-fixed-dim":"#ffb4aa","on-primary-fixed-variant":"#004b71","lumia-coral":"#ff3b30","primary":"#8ecdff","tertiary-container":"#d88a00","lumia-cyan":"#00a4ef","surface-tint":"#8ecdff","on-primary-fixed":"#001e30","background":"#14121f","surface-bright":"#3a3746"},borderRadius:{DEFAULT:"0.125rem",lg:"0.25rem",xl:"0.5rem",full:"0.75rem"},spacing:{"margin-lg":"3rem","gutter-lg":"1.5rem","space-sm":"0.5rem","space-lg":"1.5rem","space-md":"1rem","margin-md":"2rem","space-xs":"0.25rem",gutter:"1rem",margin:"1rem","space-xl":"2.5rem"},fontFamily:{"price-display":["Inter"],"label-caps":["Inter"],"headline-sm":["Inter"],"tile-stat":["Inter"],"headline-lg":["Inter"],"display-hero":["Inter"],"body-sm":["Inter"],"display-hero-mobile":["Inter"],"body-lg":["Inter"],"headline-md":["Inter"],"headline-lg-mobile":["Inter"],"body-md":["Inter"]},fontSize:{"price-display":["2rem",{lineHeight:"2.25rem",letterSpacing:"-0.02em",fontWeight:"700"}],"label-caps":["0.6875rem",{lineHeight:"1rem",letterSpacing:"0.08em",fontWeight:"600"}],"headline-sm":["1.125rem",{lineHeight:"1.5rem",fontWeight:"600"}],"tile-stat":["2.5rem",{lineHeight:"2.75rem",letterSpacing:"-0.03em",fontWeight:"200"}],"headline-lg":["2.25rem",{lineHeight:"2.75rem",letterSpacing:"-0.02em",fontWeight:"300"}],"display-hero":["3.5rem",{lineHeight:"4rem",letterSpacing:"-0.03em",fontWeight:"300"}],"body-sm":["0.8125rem",{lineHeight:"1.25rem",fontWeight:"400"}],"display-hero-mobile":["2.25rem",{lineHeight:"2.75rem",letterSpacing:"-0.02em",fontWeight:"400"}],"body-lg":["1.125rem",{lineHeight:"1.75rem",fontWeight:"400"}],"headline-md":["1.5rem",{lineHeight:"2rem",letterSpacing:"-0.015em",fontWeight:"600"}],"headline-lg-mobile":["1.75rem",{lineHeight:"2.25rem",letterSpacing:"-0.02em",fontWeight:"400"}],"body-md":["0.9375rem",{lineHeight:"1.5rem",fontWeight:"400"}]}}}};</script></head><body class="bg-surface text-on-surface font-body-md text-body-md antialiased selection:bg-primary-container selection:text-on-primary-container"><header class="fixed top-0 inset-x-0 z-50 bg-deep-purple-mid/85 backdrop-blur-xl shadow-[0_4px_30px_rgba(0,0,0,0.5)]"><div class="h-20 max-w-7xl mx-auto px-6 lg:px-12 flex items-center justify-between gap-gutter"><div class="flex items-center gap-space-md shrink-0"><img alt="Dinar Fotocopy Lumia Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1VDh339H2rFSV5vAzb9tL7rCfFkpmr4n_8UfoFzZx0FT-tDTtZW-3maSiSa8yy9WYxsWtHxWyTKD5JSNL1DYtu73qVmyUOSjqEUFYzckuXWO_pLSSBGk71aUnPvlBE7YY9p_rjtGVuhot_Se6SniWxQIuRPoCZeEnMsEm6sdfNdyAEuXw_AJF5_9qIGOS7M5aGnUJZxJjnG9RW3ZRqAXiU5D2sZk-PLvW8GhWhb4CClrFkjjlPOUV6ismk"/><div class="flex flex-col"><span class="font-headline-sm text-headline-sm uppercase tracking-wider text-on-surface font-semibold">DINAR FOTOCOPY</span><div class="hidden sm:inline-flex items-center gap-space-xs mt-0.5 px-2 py-0.5 rounded-full bg-surface-container-high/80 text-lumia-emerald font-label-caps text-label-caps uppercase"><span class="w-1.5 h-1.5 rounded-full bg-lumia-emerald animate-pulse"></span>Buka Hari Ini 08.00 - 21.00 WIB</div></div></div><nav class="hidden xl:flex items-center gap-space-sm" data-active-classes="bg-primary-container text-on-primary-container font-semibold rounded-xl px-3 py-1.5 shadow-[0_0_15px_rgba(0,164,239,0.35)]"><a class="px-3 py-1.5 rounded-xl text-on-surface-variant hover:text-on-surface hover:bg-glass-surface transition-all font-body-sm text-body-sm" data-path="beranda" href="#">Beranda</a><a class="px-3 py-1.5 rounded-xl text-on-surface-variant hover:text-on-surface hover:bg-glass-surface transition-all font-body-sm text-body-sm" data-path="layanan-dan-harga" href="#">Layanan &amp; Harga</a><a class="px-3 py-1.5 rounded-xl text-on-surface-variant hover:text-on-surface hover:bg-glass-surface transition-all font-body-sm text-body-sm" data-path="produk-atk" href="#">Produk ATK</a><a aria-current="page" class="transition-all bg-primary-container text-on-primary-container font-semibold rounded-xl px-3 py-1.5 shadow-[0_0_15px_rgba(0,164,239,0.35)]" data-path="kalkulator-estimasi" href="#">Kalkulator Estimasi</a><a class="px-3 py-1.5 rounded-xl text-on-surface-variant hover:text-on-surface hover:bg-glass-surface transition-all font-body-sm text-body-sm" data-path="status-dan-tracking" href="#">Status &amp; Tracking</a><a class="px-3 py-1.5 rounded-xl text-on-surface-variant hover:text-on-surface hover:bg-glass-surface transition-all font-body-sm text-body-sm" data-path="tentang-dan-kontak" href="#">Tentang &amp; Kontak</a></nav><div class="flex items-center gap-space-md shrink-0"><a class="hidden md:inline-flex items-center gap-space-xs px-3.5 py-2 rounded-xl bg-primary-container text-on-primary-container font-label-caps text-label-caps tracking-wider uppercase shadow-[0_2px_12px_rgba(0,164,239,0.3)] hover:brightness-110 active:scale-95 transition-all" href="https://wa.me/628123456789" target="_blank"><span class="material-symbols-outlined text-base">chat</span>WhatsApp</a><a class="relative p-2 rounded-xl bg-surface-container-high/80 text-on-surface-variant hover:text-on-surface hover:bg-surface-container-highest transition-colors" data-path="keranjang-belanja" href="#"><span class="material-symbols-outlined text-xl">shopping_cart</span><span class="absolute -top-1 -right-1 flex h-4 min-w-4 px-1 items-center justify-center rounded-full bg-lumia-coral text-[10px] font-bold text-on-surface shadow-[0_0_8px_rgba(255,59,48,0.6)]">3</span></a><div class="flex items-center pl-space-xs"><img alt="Profile" class="w-8 h-8 rounded-full object-cover shadow-[0_0_0_2px_rgba(0,164,239,0.4)]" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAr4TXD7BkX5PhJGnqAjJDypJhoDkWd1n4bMCRYJxU6H7CrI1DiQEPD6GY9Wrqs6TM83xh0HQJVXRzMKb2NcWtJQSP-ocq_31Og2nVxz4NmAfwnICIXoxd3my_SagAGwn-7uBEDAjAqw3iZybm8e_STswkxE6D7NnftBX0fmk-uSYs-bqEYKmn_GI5ePcR53qUr0Kcsaqy1oEY5X4hVoAT--nMJHMNlYKuxv33xqpaYTRY0VTUYdJ9u"/></div></div></div></header><main class="w-full pt-20 bg-surface min-h-[calc(100vh-20rem)]"><div class="flex flex-col w-full">
+<div class="relative w-full max-w-7xl mx-auto px-6 lg:px-12 py-space-lg">
+<!-- Ambient Glow Blooms -->
+<div class="absolute top-10 left-1/4 w-96 h-96 rounded-full bg-lumia-cyan/10 blur-3xl pointer-events-none -z-10"></div>
+<div class="absolute top-1/3 right-10 w-80 h-80 rounded-full bg-lumia-amber/10 blur-3xl pointer-events-none -z-10"></div>
+<!-- Header Section Tile Banner -->
+<div class="mb-space-lg grid grid-cols-1 lg:grid-cols-12 gap-gutter items-stretch">
+<div class="lg:col-span-8 p-space-lg rounded-xl bg-surface-container-low/90 backdrop-blur-xl shadow-xl flex flex-col justify-between">
+<div class="flex flex-wrap items-center justify-between gap-space-sm mb-space-sm">
+<div class="inline-flex items-center gap-space-xs px-3 py-1 rounded-full bg-lumia-cyan/15 text-lumia-cyan font-label-caps text-label-caps uppercase tracking-wider">
+<span class="material-symbols-outlined text-sm">calculate</span>
+            Sistem Estimasi Transparan PRD 6B
+          </div>
+<div class="flex items-center gap-space-xs text-on-surface-variant font-label-caps text-label-caps uppercase tracking-wider">
+<span class="inline-block w-2 h-2 rounded-full bg-lumia-emerald animate-pulse"></span>
+            Harga Terupdate Real-Time
+          </div>
+</div>
+<div>
+<h1 class="font-headline-lg text-headline-lg text-on-surface font-light tracking-tight">Kalkulator Biaya Cetak &amp; Dokumen</h1>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-2xl mt-1">
+            Sesuaikan spesifikasi dokumen, tipe kertas, jumlah eksemplar, dan opsi finishing secara instan dengan diskon volume otomatis.
+          </p>
+</div>
+<!-- Rapid Presets -->
+<div class="flex flex-wrap items-center gap-space-xs mt-space-md pt-space-sm">
+<span class="text-on-surface-variant font-label-caps text-label-caps uppercase mr-1">Preset Cepat:</span>
+<button class="px-2.5 py-1 rounded-lg bg-surface-container-high hover:bg-surface-variant text-on-surface font-body-sm text-body-sm transition-all shadow-sm" onclick="applyPreset('skripsi')" type="button">Skripsi (A4 80g + Jilid)</button>
+<button class="px-2.5 py-1 rounded-lg bg-surface-container-high hover:bg-surface-variant text-on-surface font-body-sm text-body-sm transition-all shadow-sm" onclick="applyPreset('makalah')" type="button">Makalah Mahasiswa (70g)</button>
+<button class="px-2.5 py-1 rounded-lg bg-surface-container-high hover:bg-surface-variant text-on-surface font-body-sm text-body-sm transition-all shadow-sm" onclick="applyPreset('banner')" type="button">Banner Outdoor</button>
+</div>
+</div>
+<!-- Quick Metrics Tile (Metro Style) -->
+<div class="lg:col-span-4 grid grid-cols-2 gap-gutter">
+<div class="p-space-md rounded-xl bg-lumia-cyan text-on-primary flex flex-col justify-between shadow-lg">
+<div class="flex justify-between items-start">
+<span class="font-label-caps text-label-caps uppercase tracking-wider text-on-primary/80">Kapasitas Harian</span>
+<span class="material-symbols-outlined text-xl">speed</span>
+</div>
+<div>
+<div class="font-tile-stat text-tile-stat font-light leading-none">45k+</div>
+<p class="font-body-sm text-body-sm text-on-primary/90 mt-1">Halaman/Hari Siap</p>
+</div>
+</div>
+<div class="p-space-md rounded-xl bg-surface-container-low/90 backdrop-blur-xl shadow-lg flex flex-col justify-between">
+<div class="flex justify-between items-start">
+<span class="font-label-caps text-label-caps uppercase tracking-wider text-lumia-amber">Tier Grosir</span>
+<span class="material-symbols-outlined text-xl text-lumia-amber">loyalty</span>
+</div>
+<div>
+<div class="font-headline-md text-headline-md text-on-surface font-semibold">&gt; 100 Lembar</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">Diskon 5% - 15%</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Main Workspace Two Columns -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter items-start">
+<!-- LEFT COLUMN: Form Konfigurator -->
+<div class="lg:col-span-7 flex flex-col gap-gutter">
+<!-- Step 1: Layanan Utama -->
+<div class="p-space-lg rounded-xl bg-surface-container-low/90 backdrop-blur-xl shadow-md">
+<div class="flex items-center justify-between mb-space-md">
+<div class="flex items-center gap-space-xs">
+<span class="w-6 h-6 rounded-full bg-primary-container text-on-primary-container font-label-caps text-label-caps flex items-center justify-center font-bold">1</span>
+<span class="font-headline-sm text-headline-sm text-on-surface font-semibold">Pilih Kategori Layanan</span>
+</div>
+<span class="text-on-surface-variant font-label-caps text-label-caps uppercase">Pilih Satu</span>
+</div>
+<div class="grid grid-cols-2 sm:grid-cols-4 gap-space-xs" id="service-selector">
+<button class="service-tile p-space-sm rounded-xl bg-primary-container text-on-primary-container font-medium flex flex-col items-start gap-space-xs transition-all shadow-md" data-service="fotokopi" onclick="selectService('fotokopi')" type="button">
+<span class="material-symbols-outlined text-2xl">content_copy</span>
+<span class="font-body-sm text-body-sm font-semibold">Fotokopi</span>
+<span class="font-label-caps text-label-caps opacity-80">Mulai Rp 200</span>
+</button>
+<button class="service-tile p-space-sm rounded-xl bg-surface-container hover:bg-surface-container-high text-on-surface font-medium flex flex-col items-start gap-space-xs transition-all shadow-sm" data-service="print" onclick="selectService('print')" type="button">
+<span class="material-symbols-outlined text-2xl text-lumia-cyan">print</span>
+<span class="font-body-sm text-body-sm font-semibold">Print Dokumen</span>
+<span class="font-label-caps text-label-caps text-on-surface-variant">Mulai Rp 400</span>
+</button>
+<button class="service-tile p-space-sm rounded-xl bg-surface-container hover:bg-surface-container-high text-on-surface font-medium flex flex-col items-start gap-space-xs transition-all shadow-sm" data-service="banner" onclick="selectService('banner')" type="button">
+<span class="material-symbols-outlined text-2xl text-lumia-amber">ad_units</span>
+<span class="font-body-sm text-body-sm font-semibold">Cetak Banner</span>
+<span class="font-label-caps text-label-caps text-on-surface-variant">Outdoor/Indoor</span>
+</button>
+<button class="service-tile p-space-sm rounded-xl bg-surface-container hover:bg-surface-container-high text-on-surface font-medium flex flex-col items-start gap-space-xs transition-all shadow-sm" data-service="jilid" onclick="selectService('jilid')" type="button">
+<span class="material-symbols-outlined text-2xl text-lumia-emerald">menu_book</span>
+<span class="font-body-sm text-body-sm font-semibold">Jilid Saja</span>
+<span class="font-label-caps text-label-caps text-on-surface-variant">Hard/Soft/Wire</span>
+</button>
+</div>
+</div>
+<!-- Step 2: Kertas & Dimensi -->
+<div class="p-space-lg rounded-xl bg-surface-container-low/90 backdrop-blur-xl shadow-md" id="paper-section">
+<div class="flex items-center justify-between mb-space-md">
+<div class="flex items-center gap-space-xs">
+<span class="w-6 h-6 rounded-full bg-primary-container text-on-primary-container font-label-caps text-label-caps flex items-center justify-center font-bold">2</span>
+<span class="font-headline-sm text-headline-sm text-on-surface font-semibold">Media Kertas &amp; Ukuran</span>
+</div>
+<span class="text-on-surface-variant font-label-caps text-label-caps uppercase" id="paper-selected-badge">A4 70gr</span>
+</div>
+<div class="grid grid-cols-2 sm:grid-cols-3 gap-space-xs" id="paper-selector">
+<button class="paper-tile p-space-sm rounded-xl bg-surface-container-highest text-on-surface flex flex-col items-start justify-between min-h-20 shadow-sm transition-all" onclick="selectPaper('a4_70', 200, 'A4 70gr HVS')" type="button">
+<div class="flex items-center justify-between w-full">
+<span class="font-body-sm text-body-sm font-semibold">A4 70 GSM</span>
+<span class="w-2 h-2 rounded-full bg-lumia-cyan"></span>
+</div>
+<span class="font-label-caps text-label-caps text-on-surface-variant">Standar Makalah/Draf</span>
+<span class="font-body-sm text-body-sm font-bold text-lumia-cyan mt-1">Rp 200 <span class="font-normal text-xs text-on-surface-variant">/lbr</span></span>
+</button>
+<button class="paper-tile p-space-sm rounded-xl bg-surface-container hover:bg-surface-container-high text-on-surface flex flex-col items-start justify-between min-h-20 shadow-sm transition-all" onclick="selectPaper('a4_80', 250, 'A4 80gr PaperOne')" type="button">
+<div class="flex items-center justify-between w-full">
+<span class="font-body-sm text-body-sm font-semibold">A4 80 GSM</span>
+</div>
+<span class="font-label-caps text-label-caps text-on-surface-variant">Tebal Premium (Skripsi)</span>
+<span class="font-body-sm text-body-sm font-bold text-on-surface mt-1">Rp 250 <span class="font-normal text-xs text-on-surface-variant">/lbr</span></span>
+</button>
+<button class="paper-tile p-space-sm rounded-xl bg-surface-container hover:bg-surface-container-high text-on-surface flex flex-col items-start justify-between min-h-20 shadow-sm transition-all" onclick="selectPaper('f4_70', 250, 'F4/Folio 70gr')" type="button">
+<div class="flex items-center justify-between w-full">
+<span class="font-body-sm text-body-sm font-semibold">F4 / Folio</span>
+</div>
+<span class="font-label-caps text-label-caps text-on-surface-variant">Dokumen Surat &amp; Legal</span>
+<span class="font-body-sm text-body-sm font-bold text-on-surface mt-1">Rp 250 <span class="font-normal text-xs text-on-surface-variant">/lbr</span></span>
+</button>
+<button class="paper-tile p-space-sm rounded-xl bg-surface-container hover:bg-surface-container-high text-on-surface flex flex-col items-start justify-between min-h-20 shadow-sm transition-all" onclick="selectPaper('a3_80', 700, 'A3 80gr')" type="button">
+<div class="flex items-center justify-between w-full">
+<span class="font-body-sm text-body-sm font-semibold">A3 Lebar</span>
+</div>
+<span class="font-label-caps text-label-caps text-on-surface-variant">Gambar Kerja / Desain</span>
+<span class="font-body-sm text-body-sm font-bold text-on-surface mt-1">Rp 700 <span class="font-normal text-xs text-on-surface-variant">/lbr</span></span>
+</button>
+<button class="paper-tile p-space-sm rounded-xl bg-surface-container hover:bg-surface-container-high text-on-surface flex flex-col items-start justify-between min-h-20 shadow-sm transition-all" onclick="selectPaper('glossy', 2500, 'Glossy Photo Paper')" type="button">
+<div class="flex items-center justify-between w-full">
+<span class="font-body-sm text-body-sm font-semibold">Glossy Photo</span>
+</div>
+<span class="font-label-caps text-label-caps text-on-surface-variant">Foto Kilap 210gsm</span>
+<span class="font-body-sm text-body-sm font-bold text-on-surface mt-1">Rp 2.500 <span class="font-normal text-xs text-on-surface-variant">/lbr</span></span>
+</button>
+<button class="paper-tile p-space-sm rounded-xl bg-surface-container hover:bg-surface-container-high text-on-surface flex flex-col items-start justify-between min-h-20 shadow-sm transition-all" onclick="selectPaper('artpaper', 1800, 'Art Paper 150gr')" type="button">
+<div class="flex items-center justify-between w-full">
+<span class="font-body-sm text-body-sm font-semibold">Art Paper 150g</span>
+</div>
+<span class="font-label-caps text-label-caps text-on-surface-variant">Brosur &amp; Pamflet</span>
+<span class="font-body-sm text-body-sm font-bold text-on-surface mt-1">Rp 1.800 <span class="font-normal text-xs text-on-surface-variant">/lbr</span></span>
+</button>
+</div>
+</div>
+<!-- Step 3: Mode Tinta & Sisi Cetak -->
+<div class="p-space-lg rounded-xl bg-surface-container-low/90 backdrop-blur-xl shadow-md">
+<div class="flex items-center justify-between mb-space-md">
+<div class="flex items-center gap-space-xs">
+<span class="w-6 h-6 rounded-full bg-primary-container text-on-primary-container font-label-caps text-label-caps flex items-center justify-center font-bold">3</span>
+<span class="font-headline-sm text-headline-sm text-on-surface font-semibold">Mode Tinta &amp; Sisi</span>
+</div>
+<span class="text-on-surface-variant font-label-caps text-label-caps uppercase">Konfigurasi Warna</span>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-space-md">
+<!-- Warna Tinta -->
+<div class="flex flex-col gap-space-xs">
+<span class="font-label-caps text-label-caps text-on-surface-variant uppercase">Warna Tinta</span>
+<div class="grid grid-cols-2 gap-space-xs p-1 rounded-xl bg-surface-container">
+<button class="py-2 px-3 rounded-lg bg-surface-container-highest text-on-surface font-body-sm text-body-sm font-semibold flex items-center justify-center gap-space-xs transition-all" id="btn-bw" onclick="setColorMode('bw')" type="button">
+<span class="material-symbols-outlined text-base">contrast</span> Hitam Putih
+                </button>
+<button class="py-2 px-3 rounded-lg text-on-surface-variant hover:text-on-surface font-body-sm text-body-sm flex items-center justify-center gap-space-xs transition-all" id="btn-color" onclick="setColorMode('color')" type="button">
+<span class="material-symbols-outlined text-base text-lumia-cyan">palette</span> Full Color
+                </button>
+</div>
+</div>
+<!-- Sisi Cetak -->
+<div class="flex flex-col gap-space-xs">
+<span class="font-label-caps text-label-caps text-on-surface-variant uppercase">Format Sisi</span>
+<div class="grid grid-cols-2 gap-space-xs p-1 rounded-xl bg-surface-container">
+<button class="py-2 px-3 rounded-lg bg-surface-container-highest text-on-surface font-body-sm text-body-sm font-semibold flex items-center justify-center gap-space-xs transition-all" id="btn-single" onclick="setSideMode('single')" type="button">
+<span class="material-symbols-outlined text-base">article</span> 1 Sisi
+                </button>
+<button class="py-2 px-3 rounded-lg text-on-surface-variant hover:text-on-surface font-body-sm text-body-sm flex items-center justify-center gap-space-xs transition-all" id="btn-duplex" onclick="setSideMode('duplex')" type="button">
+<span class="material-symbols-outlined text-base">auto_stories</span> Bolak-balik
+                </button>
+</div>
+</div>
+</div>
+</div>
+<!-- Step 4: Finishing & Jilid Tambahan -->
+<div class="p-space-lg rounded-xl bg-surface-container-low/90 backdrop-blur-xl shadow-md">
+<div class="flex items-center justify-between mb-space-md">
+<div class="flex items-center gap-space-xs">
+<span class="w-6 h-6 rounded-full bg-primary-container text-on-primary-container font-label-caps text-label-caps flex items-center justify-center font-bold">4</span>
+<span class="font-headline-sm text-headline-sm text-on-surface font-semibold">Opsi Finishing Dokumen</span>
+</div>
+<span class="text-on-surface-variant font-label-caps text-label-caps uppercase">Bisa Multi-Pilih</span>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-3 gap-space-sm">
+<!-- Jilid Spiral -->
+<label class="cursor-pointer p-space-sm rounded-xl bg-surface-container hover:bg-surface-container-high transition-all flex flex-col justify-between select-none group shadow-sm">
+<div class="flex items-start justify-between">
+<span class="material-symbols-outlined text-2xl text-lumia-amber group-hover:scale-110 transition-transform">layers</span>
+<input class="w-4 h-4 rounded bg-surface-container-highest text-primary-container focus:ring-0" id="chk-spiral" onchange="calculateTotal()" type="checkbox"/>
+</div>
+<div class="mt-2">
+<span class="font-body-sm text-body-sm font-semibold block text-on-surface">Jilid Spiral Kawat</span>
+<span class="font-label-caps text-label-caps text-lumia-amber mt-0.5 block">+Rp 15.000 / buku</span>
+</div>
+</label>
+<!-- Laminating -->
+<label class="cursor-pointer p-space-sm rounded-xl bg-surface-container hover:bg-surface-container-high transition-all flex flex-col justify-between select-none group shadow-sm">
+<div class="flex items-start justify-between">
+<span class="material-symbols-outlined text-2xl text-lumia-cyan group-hover:scale-110 transition-transform">shield</span>
+<input class="w-4 h-4 rounded bg-surface-container-highest text-primary-container focus:ring-0" id="chk-laminating" onchange="calculateTotal()" type="checkbox"/>
+</div>
+<div class="mt-2">
+<span class="font-body-sm text-body-sm font-semibold block text-on-surface">Laminating Press</span>
+<span class="font-label-caps text-label-caps text-lumia-cyan mt-0.5 block">+Rp 5.000 / lbr</span>
+</div>
+</label>
+<!-- Staples / Klip (Gratis) -->
+<label class="cursor-pointer p-space-sm rounded-xl bg-surface-container hover:bg-surface-container-high transition-all flex flex-col justify-between select-none group shadow-sm">
+<div class="flex items-start justify-between">
+<span class="material-symbols-outlined text-2xl text-lumia-emerald group-hover:scale-110 transition-transform">attach_file</span>
+<input checked="" class="w-4 h-4 rounded bg-surface-container-highest text-primary-container focus:ring-0" id="chk-staples" onchange="calculateTotal()" type="checkbox"/>
+</div>
+<div class="mt-2">
+<span class="font-body-sm text-body-sm font-semibold block text-on-surface">Staples / Klip Sudut</span>
+<span class="font-label-caps text-label-caps text-lumia-emerald mt-0.5 block">Gratis (Included)</span>
+</div>
+</label>
+</div>
+</div>
+<!-- Step 5: Slider & Stepper Kuantitas -->
+<div class="p-space-lg rounded-xl bg-surface-container-low/90 backdrop-blur-xl shadow-md">
+<div class="flex items-center justify-between mb-space-sm">
+<div class="flex items-center gap-space-xs">
+<span class="w-6 h-6 rounded-full bg-primary-container text-on-primary-container font-label-caps text-label-caps flex items-center justify-center font-bold">5</span>
+<span class="font-headline-sm text-headline-sm text-on-surface font-semibold">Jumlah Lembar / Eksemplar</span>
+</div>
+<span class="font-label-caps text-label-caps text-lumia-emerald px-2 py-0.5 rounded-full bg-lumia-emerald/15" id="discount-badge">
+              Diskon 5% Aktif
+            </span>
+</div>
+<div class="flex flex-col gap-space-md mt-space-sm">
+<div class="flex items-center gap-space-md">
+<input class="w-full h-2 bg-surface-container-highest rounded-lg appearance-none cursor-pointer accent-primary-container" id="quantity-slider" max="1000" min="1" oninput="syncQuantity(this.value)" type="range" value="250"/>
+<div class="flex items-center bg-surface-container rounded-xl p-1 shrink-0">
+<button class="w-8 h-8 rounded-lg bg-surface-container-high hover:bg-surface-container-highest text-on-surface flex items-center justify-center font-bold" onclick="adjustQuantity(-10)" type="button">-</button>
+<input class="w-16 bg-transparent text-center text-on-surface font-headline-sm text-headline-sm font-bold focus:outline-none" id="quantity-input" max="5000" min="1" onchange="syncQuantity(this.value)" type="number" value="250"/>
+<button class="w-8 h-8 rounded-lg bg-surface-container-high hover:bg-surface-container-highest text-on-surface flex items-center justify-center font-bold" onclick="adjustQuantity(10)" type="button">+</button>
+</div>
+</div>
+<!-- Discount Milestone Visual Indicator -->
+<div class="grid grid-cols-3 gap-space-xs text-center">
+<div class="p-2 rounded-lg bg-surface-container" id="tier-1">
+<span class="font-label-caps text-label-caps block text-on-surface-variant uppercase">&lt; 100 Lembar</span>
+<span class="font-body-sm text-body-sm text-on-surface font-medium">Harga Normal</span>
+</div>
+<div class="p-2 rounded-lg bg-surface-container-highest" id="tier-2">
+<span class="font-label-caps text-label-caps block text-lumia-cyan uppercase">100 - 499 Lembar</span>
+<span class="font-body-sm text-body-sm text-lumia-cyan font-bold">Hemat 5%</span>
+</div>
+<div class="p-2 rounded-lg bg-surface-container" id="tier-3">
+<span class="font-label-caps text-label-caps block text-on-surface-variant uppercase">&gt;= 500 Lembar</span>
+<span class="font-body-sm text-body-sm text-on-surface font-medium">Hemat 10% Grosir</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- RIGHT COLUMN: Live Receipt / Glass Summary (PRD Bab 10) -->
+<div class="lg:col-span-5 lg:sticky lg:top-24 flex flex-col gap-gutter">
+<div class="p-space-lg rounded-xl bg-surface-container-low/95 backdrop-blur-2xl shadow-2xl relative overflow-hidden">
+<!-- Glass Accent Border Glow -->
+<div class="absolute -top-12 -right-12 w-36 h-36 rounded-full bg-lumia-cyan/20 blur-2xl pointer-events-none"></div>
+<!-- Order Ticket Header -->
+<div class="flex items-center justify-between pb-space-sm">
+<div class="flex flex-col">
+<span class="font-label-caps text-label-caps uppercase text-on-surface-variant tracking-wider">Tiket Estimasi Instan</span>
+<span class="font-headline-sm text-headline-sm font-bold text-on-surface mt-0.5" id="order-id-label">DF-250120-4821</span>
+</div>
+<div class="px-2.5 py-1 rounded-lg bg-surface-container-high text-lumia-cyan font-label-caps text-label-caps tracking-widest font-mono">
+              ONLINE QUOTE
+            </div>
+</div>
+<!-- Itemised Tabular Breakdown -->
+<div class="py-space-md flex flex-col gap-space-xs text-body-sm font-body-sm">
+<div class="flex justify-between items-center text-on-surface-variant">
+<span>Layanan Utama</span>
+<span class="font-medium text-on-surface" id="summary-service">Fotokopi Dokumen</span>
+</div>
+<div class="flex justify-between items-center text-on-surface-variant">
+<span>Media Kertas</span>
+<span class="font-medium text-on-surface" id="summary-paper">A4 70gr HVS</span>
+</div>
+<div class="flex justify-between items-center text-on-surface-variant">
+<span>Warna &amp; Format</span>
+<span class="font-medium text-on-surface" id="summary-mode">Hitam Putih (1 Sisi)</span>
+</div>
+<div class="flex justify-between items-center text-on-surface-variant">
+<span>Biaya Satuan Dasar</span>
+<span class="font-mono text-on-surface" id="summary-unit-price">Rp 200 / lbr</span>
+</div>
+<div class="flex justify-between items-center text-on-surface-variant">
+<span>Volume Cetak</span>
+<span class="font-mono text-on-surface" id="summary-quantity">250 Lembar</span>
+</div>
+<!-- Subtotal Raw -->
+<div class="flex justify-between items-center text-on-surface-variant pt-2">
+<span>Subtotal Cetak</span>
+<span class="font-mono text-on-surface" id="summary-subtotal">Rp 50.000</span>
+</div>
+<!-- Finishing Add-ons Breakdown -->
+<div class="flex justify-between items-center text-on-surface-variant" id="row-finishing">
+<span id="summary-finishing-label">Opsi Tambahan (Staples)</span>
+<span class="font-mono text-on-surface" id="summary-finishing-price">Rp 0</span>
+</div>
+<!-- Discount Row -->
+<div class="flex justify-between items-center text-lumia-emerald py-1">
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-base">savings</span> Diskon Kuantitas (5%)</span>
+<span class="font-mono font-bold" id="summary-discount">-Rp 2.500</span>
+</div>
+</div>
+<!-- Total Highlight Box (Metro Tile Hero) -->
+<div class="p-space-md rounded-xl bg-surface-container-highest/80 my-space-sm flex flex-col gap-1">
+<span class="font-label-caps text-label-caps uppercase text-on-surface-variant tracking-wider">Total Estimasi Bersih</span>
+<div class="flex items-baseline justify-between">
+<div class="font-price-display text-price-display font-bold text-lumia-cyan font-mono" id="summary-grand-total">
+                Rp 47.500
+              </div>
+<span class="font-label-caps text-label-caps uppercase text-lumia-emerald bg-lumia-emerald/15 px-2 py-0.5 rounded">
+                Hemat Rp 2.500
+              </span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1 italic">
+              *Estimasi dapat berubah setelah kami periksa berkas fisik/file Anda.
+            </p>
+</div>
+<!-- Fast Customer Data & Direct Action -->
+<div class="flex flex-col gap-space-sm mt-space-sm">
+<div class="flex flex-col gap-1">
+<label class="font-label-caps text-label-caps text-on-surface-variant uppercase" for="cust-name">Nama Pemesan</label>
+<input class="w-full px-3 py-2 rounded-lg bg-surface-container text-on-surface font-body-sm text-body-sm focus:outline-none focus:bg-surface-container-high transition-colors" id="cust-name" placeholder="Misal: Andi Wijaya" type="text"/>
+</div>
+<div class="flex flex-col gap-1">
+<label class="font-label-caps text-label-caps text-on-surface-variant uppercase" for="cust-wa">Nomor WhatsApp</label>
+<input class="w-full px-3 py-2 rounded-lg bg-surface-container text-on-surface font-body-sm text-body-sm focus:outline-none focus:bg-surface-container-high transition-colors" id="cust-wa" placeholder="0812xxxxxxx" type="tel"/>
+</div>
+<!-- Two Action Buttons (PRD Spec) -->
+<div class="grid grid-cols-1 gap-space-xs pt-space-xs">
+<button class="w-full py-3 px-4 rounded-xl bg-lumia-emerald text-on-surface font-headline-sm text-headline-sm font-semibold flex items-center justify-center gap-space-xs shadow-lg hover:brightness-110 active:scale-[0.98] transition-all" onclick="sendWhatsAppOrder()" type="button">
+<span class="material-symbols-outlined">chat</span>
+                Pesan Langsung via WhatsApp
+              </button>
+<button class="w-full py-2.5 px-4 rounded-xl bg-primary-container text-on-primary-container font-body-md text-body-md font-semibold flex items-center justify-center gap-space-xs shadow-md hover:brightness-105 active:scale-[0.98] transition-all" onclick="addToCart()" type="button">
+<span class="material-symbols-outlined text-xl">add_shopping_cart</span>
+                Tambah ke Keranjang
+              </button>
+</div>
+</div>
+<!-- Security / Guarantee Micro Tile -->
+<div class="mt-space-md pt-space-sm flex items-center justify-around text-center text-on-surface-variant font-label-caps text-label-caps uppercase">
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-base text-lumia-cyan">security</span> Garansi Cetak</span>
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-base text-lumia-emerald">timer</span> Siap Cepat</span>
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-base text-lumia-amber">verified</span> Resmi Metro</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Visual Infographic Tile: Panduan Standar Ukuran Kertas & Finishing -->
+<div class="mt-space-xl p-space-lg rounded-xl bg-surface-container-low/90 backdrop-blur-xl shadow-lg">
+<div class="flex flex-wrap items-center justify-between gap-space-sm mb-space-md">
+<div>
+<span class="font-label-caps text-label-caps text-lumia-cyan uppercase tracking-wider">Referensi Percetakan</span>
+<h2 class="font-headline-md text-headline-md text-on-surface font-semibold mt-0.5">Panduan Dimensi Dokumen &amp; Skala Cetak</h2>
+</div>
+<div class="flex items-center gap-space-xs text-on-surface-variant font-body-sm text-body-sm">
+<span class="material-symbols-outlined text-base text-lumia-emerald">info</span> Resolusi Minimal 300 DPI Disarankan
+        </div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-4 gap-gutter">
+<div class="p-space-md rounded-xl bg-surface-container flex flex-col gap-2 shadow-sm">
+<div class="flex items-center justify-between text-lumia-cyan">
+<span class="font-headline-sm text-headline-sm font-bold">A4 Standard</span>
+<span class="font-mono text-xs">21.0 x 29.7 cm</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Ideal untuk draf skripsi, tugas kuliah, formulir resmi, buku ajar, dan laporan pertanggungjawaban kantor.</p>
+<div class="mt-auto pt-2 flex items-center gap-1 text-xs text-lumia-emerald">
+<span class="material-symbols-outlined text-sm">check_circle</span> Terbanyak Digunakan
+          </div>
+</div>
+<div class="p-space-md rounded-xl bg-surface-container flex flex-col gap-2 shadow-sm">
+<div class="flex items-center justify-between text-lumia-amber">
+<span class="font-headline-sm text-headline-sm font-bold">F4 / Folio</span>
+<span class="font-mono text-xs">21.5 x 33.0 cm</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Standar kearsipan pemerintah Indonesia, akta notaris, lembar pengesahan dinas, dan surat perjanjian legal.</p>
+<div class="mt-auto pt-2 flex items-center gap-1 text-xs text-on-surface-variant">
+<span class="material-symbols-outlined text-sm">schedule</span> Stok Selalu Siap
+          </div>
+</div>
+<div class="p-space-md rounded-xl bg-surface-container flex flex-col gap-2 shadow-sm">
+<div class="flex items-center justify-between text-tertiary">
+<span class="font-headline-sm text-headline-sm font-bold">A3 Arsitektur</span>
+<span class="font-mono text-xs">29.7 x 42.0 cm</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">2x ukuran A4. Direkomendasikan untuk gambar denah arsitek, visual grafik peraga, kalender dinding, dan bagan kerja.</p>
+<div class="mt-auto pt-2 flex items-center gap-1 text-xs text-lumia-cyan">
+<span class="material-symbols-outlined text-sm">print</span> Plotter Laser Ready
+          </div>
+</div>
+<div class="p-space-md rounded-xl bg-surface-container flex flex-col gap-2 shadow-sm">
+<div class="flex items-center justify-between text-lumia-emerald">
+<span class="font-headline-sm text-headline-sm font-bold">Flexi Banner</span>
+<span class="font-mono text-xs">Custom Meteran</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Media outdoor tahan cuaca 280gsm - 440gsm dengan mata ayam ring besi di keempat sudut. Hitungan per m².</p>
+<div class="mt-auto pt-2 flex items-center gap-1 text-xs text-lumia-amber">
+<span class="material-symbols-outlined text-sm">sunny</span> Tahan Panas &amp; Hujan
+          </div>
+</div>
+</div>
+</div>
+<!-- Notification Toast Modal -->
+<div class="fixed bottom-6 right-6 z-50 transform translate-y-24 opacity-0 transition-all duration-300 pointer-events-none" id="toast">
+<div class="p-space-md rounded-xl bg-surface-container-high shadow-2xl flex items-center gap-space-sm text-on-surface">
+<span class="material-symbols-outlined text-lumia-emerald" id="toast-icon">check_circle</span>
+<span class="font-body-sm text-body-sm" id="toast-message">Item berhasil ditambahkan ke keranjang!</span>
+</div>
+</div>
+</div>
+</div>
+<script>
+  // State Manager
+  const calcState = {
+    service: 'fotokopi',
+    serviceName: 'Fotokopi Dokumen',
+    paper: 'a4_70',
+    paperName: 'A4 70gr HVS',
+    baseRate: 200,
+    colorMode: 'bw', // bw or color
+    sideMode: 'single', // single or duplex
+    spiral: false,
+    laminating: false,
+    staples: true,
+    quantity: 250,
+    unitPrice: 200,
+    subtotal: 50000,
+    discountAmount: 2500,
+    finishingCost: 0,
+    grandTotal: 47500,
+    orderId: 'DF-' + Math.floor(100000 + Math.random() * 900000)
+  };
+
+  document.getElementById('order-id-label').innerText = calcState.orderId;
+
+  function selectService(type) {
+    calcState.service = type;
+    const tiles = document.querySelectorAll('.service-tile');
+    tiles.forEach(t => {
+      if (t.getAttribute('data-service') === type) {
+        t.className = 'service-tile p-space-sm rounded-xl bg-primary-container text-on-primary-container font-medium flex flex-col items-start gap-space-xs transition-all shadow-md';
+      } else {
+        t.className = 'service-tile p-space-sm rounded-xl bg-surface-container hover:bg-surface-container-high text-on-surface font-medium flex flex-col items-start gap-space-xs transition-all shadow-sm';
+      }
+    });
+
+    if (type === 'fotokopi') {
+      calcState.serviceName = 'Fotokopi Dokumen';
+      calcState.baseRate = 200;
+    } else if (type === 'print') {
+      calcState.serviceName = 'Print Dokumen Digital';
+      calcState.baseRate = 400;
+    } else if (type === 'banner') {
+      calcState.serviceName = 'Cetak Banner Flexi';
+      calcState.baseRate = 25000;
+    } else if (type === 'jilid') {
+      calcState.serviceName = 'Jasa Penjilidan Saja';
+      calcState.baseRate = 0;
+      calcState.spiral = true;
+      document.getElementById('chk-spiral').checked = true;
+    }
+
+    calculateTotal();
+  }
+
+  function selectPaper(key, rate, name) {
+    calcState.paper = key;
+    calcState.baseRate = rate;
+    calcState.paperName = name;
+    document.getElementById('paper-selected-badge').innerText = name;
+
+    const tiles = document.querySelectorAll('.paper-tile');
+    tiles.forEach(tile => {
+      tile.className = 'paper-tile p-space-sm rounded-xl bg-surface-container hover:bg-surface-container-high text-on-surface flex flex-col items-start justify-between min-h-20 shadow-sm transition-all';
+      const indicator = tile.querySelector('.bg-lumia-cyan');
+      if (indicator) indicator.remove();
+    });
+
+    if (window.event && window.event.currentTarget) {
+      const activeTile = window.event.currentTarget;
+      activeTile.className = 'paper-tile p-space-sm rounded-xl bg-surface-container-highest text-on-surface flex flex-col items-start justify-between min-h-20 shadow-sm transition-all';
+    }
+
+    calculateTotal();
+  }
+
+  function setColorMode(mode) {
+    calcState.colorMode = mode;
+    const btnBw = document.getElementById('btn-bw');
+    const btnColor = document.getElementById('btn-color');
+    if (mode === 'bw') {
+      btnBw.className = 'py-2 px-3 rounded-lg bg-surface-container-highest text-on-surface font-body-sm text-body-sm font-semibold flex items-center justify-center gap-space-xs transition-all';
+      btnColor.className = 'py-2 px-3 rounded-lg text-on-surface-variant hover:text-on-surface font-body-sm text-body-sm flex items-center justify-center gap-space-xs transition-all';
+    } else {
+      btnColor.className = 'py-2 px-3 rounded-lg bg-surface-container-highest text-on-surface font-body-sm text-body-sm font-semibold flex items-center justify-center gap-space-xs transition-all';
+      btnBw.className = 'py-2 px-3 rounded-lg text-on-surface-variant hover:text-on-surface font-body-sm text-body-sm flex items-center justify-center gap-space-xs transition-all';
+    }
+    calculateTotal();
+  }
+
+  function setSideMode(mode) {
+    calcState.sideMode = mode;
+    const btnSingle = document.getElementById('btn-single');
+    const btnDuplex = document.getElementById('btn-duplex');
+    if (mode === 'single') {
+      btnSingle.className = 'py-2 px-3 rounded-lg bg-surface-container-highest text-on-surface font-body-sm text-body-sm font-semibold flex items-center justify-center gap-space-xs transition-all';
+      btnDuplex.className = 'py-2 px-3 rounded-lg text-on-surface-variant hover:text-on-surface font-body-sm text-body-sm flex items-center justify-center gap-space-xs transition-all';
+    } else {
+      btnDuplex.className = 'py-2 px-3 rounded-lg bg-surface-container-highest text-on-surface font-body-sm text-body-sm font-semibold flex items-center justify-center gap-space-xs transition-all';
+      btnSingle.className = 'py-2 px-3 rounded-lg text-on-surface-variant hover:text-on-surface font-body-sm text-body-sm flex items-center justify-center gap-space-xs transition-all';
+    }
+    calculateTotal();
+  }
+
+  function syncQuantity(val) {
+    const q = Math.max(1, parseInt(val) || 1);
+    calcState.quantity = q;
+    document.getElementById('quantity-slider').value = q;
+    document.getElementById('quantity-input').value = q;
+    calculateTotal();
+  }
+
+  function adjustQuantity(delta) {
+    const nextVal = Math.max(1, calcState.quantity + delta);
+    syncQuantity(nextVal);
+  }
+
+  function applyPreset(preset) {
+    if (preset === 'skripsi') {
+      selectService('print');
+      selectPaper('a4_80', 250, 'A4 80gr PaperOne');
+      setColorMode('bw');
+      setSideMode('single');
+      document.getElementById('chk-spiral').checked = true;
+      document.getElementById('chk-laminating').checked = false;
+      syncQuantity(120);
+    } else if (preset === 'makalah') {
+      selectService('fotokopi');
+      selectPaper('a4_70', 200, 'A4 70gr HVS');
+      setColorMode('bw');
+      setSideMode('duplex');
+      document.getElementById('chk-spiral').checked = false;
+      document.getElementById('chk-staples').checked = true;
+      syncQuantity(60);
+    } else if (preset === 'banner') {
+      selectService('banner');
+      selectPaper('a3_80', 700, 'A3 80gr');
+      setColorMode('color');
+      setSideMode('single');
+      document.getElementById('chk-spiral').checked = false;
+      document.getElementById('chk-laminating').checked = true;
+      syncQuantity(10);
+    }
+    showToast('Preset "' + preset + '" berhasil diaplikasikan!');
+  }
+
+  function calculateTotal() {
+    calcState.spiral = document.getElementById('chk-spiral').checked;
+    calcState.laminating = document.getElementById('chk-laminating').checked;
+    calcState.staples = document.getElementById('chk-staples').checked;
+
+    let base = calcState.baseRate;
+    if (calcState.colorMode === 'color') {
+      base = base === 0 ? 0 : base + 600;
+    }
+    if (calcState.sideMode === 'duplex' && calcState.service !== 'banner') {
+      base = Math.round(base * 1.8);
+    }
+
+    calcState.unitPrice = base;
+    const rawSubtotal = calcState.unitPrice * calcState.quantity;
+    calcState.subtotal = rawSubtotal;
+
+    // Diskon Volume Tier
+    let discountPercent = 0;
+    const tier1 = document.getElementById('tier-1');
+    const tier2 = document.getElementById('tier-2');
+    const tier3 = document.getElementById('tier-3');
+    const discountBadge = document.getElementById('discount-badge');
+
+    tier1.className = 'p-2 rounded-lg bg-surface-container';
+    tier2.className = 'p-2 rounded-lg bg-surface-container';
+    tier3.className = 'p-2 rounded-lg bg-surface-container';
+
+    if (calcState.quantity >= 500) {
+      discountPercent = 0.10;
+      tier3.className = 'p-2 rounded-lg bg-surface-container-highest shadow-sm';
+      discountBadge.innerText = 'Diskon 10% Grosir Aktif!';
+      discountBadge.className = 'font-label-caps text-label-caps text-lumia-amber px-2 py-0.5 rounded-full bg-lumia-amber/15';
+    } else if (calcState.quantity >= 100) {
+      discountPercent = 0.05;
+      tier2.className = 'p-2 rounded-lg bg-surface-container-highest shadow-sm';
+      discountBadge.innerText = 'Diskon 5% Aktif untuk >= 100 lembar!';
+      discountBadge.className = 'font-label-caps text-label-caps text-lumia-emerald px-2 py-0.5 rounded-full bg-lumia-emerald/15';
+    } else {
+      discountPercent = 0;
+      tier1.className = 'p-2 rounded-lg bg-surface-container-highest shadow-sm';
+      discountBadge.innerText = 'Harga Standar';
+      discountBadge.className = 'font-label-caps text-label-caps text-on-surface-variant px-2 py-0.5 rounded-full bg-surface-container';
+    }
+
+    calcState.discountAmount = Math.round(rawSubtotal * discountPercent);
+
+    // Finishing
+    let finishing = 0;
+    const finishingItems = [];
+    if (calcState.spiral) {
+      finishing += 15000;
+      finishingItems.push('Jilid Spiral (+Rp 15.000)');
+    }
+    if (calcState.laminating) {
+      const lamCost = 5000 * Math.min(calcState.quantity, 10);
+      finishing += lamCost;
+      finishingItems.push('Laminasi (' + (calcState.quantity > 10 ? '10 lbr' : calcState.quantity + ' lbr') + ')');
+    }
+    if (calcState.staples) {
+      finishingItems.push('Klip Gratis');
+    }
+
+    calcState.finishingCost = finishing;
+    calcState.grandTotal = Math.max(0, (rawSubtotal - calcState.discountAmount) + finishing);
+
+    // Update DOM Live Receipt
+    document.getElementById('summary-service').innerText = calcState.serviceName;
+    document.getElementById('summary-paper').innerText = calcState.paperName;
+    document.getElementById('summary-mode').innerText = (calcState.colorMode === 'bw' ? 'Hitam Putih' : 'Full Color') + ' (' + (calcState.sideMode === 'single' ? '1 Sisi' : 'Bolak-balik') + ')';
+    document.getElementById('summary-unit-price').innerText = 'Rp ' + calcState.unitPrice.toLocaleString('id-ID') + ' / lbr';
+    document.getElementById('summary-quantity').innerText = calcState.quantity.toLocaleString('id-ID') + ' Lembar';
+    document.getElementById('summary-subtotal').innerText = 'Rp ' + rawSubtotal.toLocaleString('id-ID');
+    document.getElementById('summary-discount').innerText = '-Rp ' + calcState.discountAmount.toLocaleString('id-ID');
+
+    const labelFinishing = finishingItems.length > 0 ? finishingItems.join(', ') : 'Tanpa Finishing';
+    document.getElementById('summary-finishing-label').innerText = labelFinishing;
+    document.getElementById('summary-finishing-price').innerText = 'Rp ' + finishing.toLocaleString('id-ID');
+
+    document.getElementById('summary-grand-total').innerText = 'Rp ' + calcState.grandTotal.toLocaleString('id-ID');
+  }
+
+  function sendWhatsAppOrder() {
+    const name = document.getElementById('cust-name').value.trim() || 'Pelanggan';
+    const wa = document.getElementById('cust-wa').value.trim() || '-';
+    
+    const text = 
+      'Halo Admin *Dinar Fotocopy* 👋%0A%0A' +
+      'Saya ingin memesan cetak via website dengan rincian berikut:%0A' +
+      '━━━━━━━━━━━━━━━━━━━━%0A' +
+      '🆔 *ID Estimasi:* ' + calcState.orderId + '%0A' +
+      '👤 *Nama:* ' + encodeURIComponent(name) + '%0A' +
+      '📱 *Kontak:* ' + encodeURIComponent(wa) + '%0A' +
+      '📄 *Layanan:* ' + encodeURIComponent(calcState.serviceName) + '%0A' +
+      '📐 *Spesifikasi:* ' + encodeURIComponent(calcState.paperName) + ' (' + (calcState.colorMode === 'bw' ? 'Hitam Putih' : 'Full Color') + ', ' + (calcState.sideMode === 'single' ? '1 Sisi' : 'Bolak-balik') + ')%0A' +
+      '🔢 *Jumlah:* ' + calcState.quantity + ' Lembar%0A' +
+      '✨ *Finishing:* ' + (calcState.spiral ? 'Jilid Spiral (+15k), ' : '') + (calcState.laminating ? 'Laminating, ' : '') + (calcState.staples ? 'Staples' : 'None') + '%0A' +
+      '💰 *Total Estimasi:* Rp ' + calcState.grandTotal.toLocaleString('id-ID') + '%0A' +
+      '━━━━━━━━━━━━━━━━━━━━%0A' +
+      'Mohon verifikasi ketersediaan antrean dan instruksi pengiriman file. Terima kasih!';
+
+    window.open('https://wa.me/628123456789?text=' + text, '_blank');
+  }
+
+  function addToCart() {
+    showToast('Pesanan ' + calcState.orderId + ' ditambahkan ke keranjang!');
+  }
+
+  function showToast(msg) {
+    const toast = document.getElementById('toast');
+    const toastMsg = document.getElementById('toast-message');
+    toastMsg.innerText = msg;
+    toast.classList.remove('translate-y-24', 'opacity-0');
+    toast.classList.add('translate-y-0', 'opacity-100');
+    setTimeout(() => {
+      toast.classList.add('translate-y-24', 'opacity-0');
+      toast.classList.remove('translate-y-0', 'opacity-100');
+    }, 3500);
+  }
+
+  // Initialize
+  calculateTotal();
+</script></main><footer class="w-full bg-deep-purple-end/95 text-on-surface"><div class="max-w-7xl mx-auto px-6 lg:px-12 py-space-xl"><div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-gutter-lg"><div class="flex flex-col gap-space-sm"><div class="flex items-center gap-space-sm"><img alt="Dinar Fotocopy Lumia Logo" class="h-7 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1VDh339H2rFSV5vAzb9tL7rCfFkpmr4n_8UfoFzZx0FT-tDTtZW-3maSiSa8yy9WYxsWtHxWyTKD5JSNL1DYtu73qVmyUOSjqEUFYzckuXWO_pLSSBGk71aUnPvlBE7YY9p_rjtGVuhot_Se6SniWxQIuRPoCZeEnMsEm6sdfNdyAEuXw_AJF5_9qIGOS7M5aGnUJZxJjnG9RW3ZRqAXiU5D2sZk-PLvW8GhWhb4CClrFkjjlPOUV6ismk"/><span class="font-headline-sm text-headline-sm uppercase tracking-wider text-on-surface font-semibold">DINAR FOTOCOPY</span></div><p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">Pusat fotokopi berkecepatan tinggi, percetakan digital profesional, penjilidan dokumen rapi, dan perlengkapan alat tulis kantor berkualitas.</p><div class="inline-flex items-center gap-space-xs text-lumia-cyan font-label-caps text-label-caps tracking-wider uppercase mt-space-xs"><span class="material-symbols-outlined text-base">verified</span>Kualitas &amp; Kecepatan Metro</div></div><div class="flex flex-col gap-space-sm"><span class="font-headline-sm text-headline-sm text-on-surface font-semibold">Kontak &amp; Alamat</span><ul class="flex flex-col gap-space-xs font-body-sm text-body-sm text-on-surface-variant"><li class="flex items-start gap-space-xs"><span class="material-symbols-outlined text-base text-lumia-cyan mt-0.5 shrink-0">location_on</span><span>Jl. Melati No. 22, Bandung, Jawa Barat 40123</span></li><li class="flex items-center gap-space-xs"><span class="material-symbols-outlined text-base text-lumia-emerald shrink-0">call</span><span>WA: 0812-3456-789</span></li><li class="flex items-center gap-space-xs"><span class="material-symbols-outlined text-base text-lumia-amber shrink-0">mail</span><span>order@dinarfotocopy.com</span></li></ul></div><div class="flex flex-col gap-space-sm"><span class="font-headline-sm text-headline-sm text-on-surface font-semibold">Jam Layanan Toko</span><div class="flex flex-col gap-space-xs font-body-sm text-body-sm text-on-surface-variant"><div class="flex justify-between items-center py-1"><span class="text-on-surface">Senin - Jumat</span><span class="font-semibold text-lumia-cyan">08.00 - 21.00 WIB</span></div><div class="flex justify-between items-center py-1"><span class="text-on-surface">Sabtu</span><span class="font-semibold text-lumia-cyan">08.00 - 18.00 WIB</span></div><div class="flex justify-between items-center py-1"><span class="text-on-surface">Minggu &amp; Libur</span><span class="text-tertiary font-semibold">10.00 - 17.00 WIB</span></div></div><div class="mt-space-xs p-space-sm rounded-xl bg-surface-container-high/60 flex items-center gap-space-xs text-lumia-emerald"><span class="material-symbols-outlined text-base">bolt</span><span class="font-label-caps text-label-caps uppercase">Layanan Cepat Kilat Ready</span></div></div><div class="flex flex-col gap-space-sm"><span class="font-headline-sm text-headline-sm text-on-surface font-semibold">Navigasi Cepat</span><div class="grid grid-cols-2 gap-x-space-md gap-y-space-xs font-body-sm text-body-sm text-on-surface-variant"><a class="hover:text-on-surface transition-colors" data-path="beranda" href="#">Beranda</a><a class="hover:text-on-surface transition-colors" data-path="layanan-dan-harga" href="#">Layanan Cetak</a><a class="hover:text-on-surface transition-colors" data-path="produk-atk" href="#">Katalog ATK</a><a class="hover:text-on-surface transition-colors" data-path="kalkulator-estimasi" href="#">Hitung Biaya</a><a class="hover:text-on-surface transition-colors" data-path="status-dan-tracking" href="#">Lacak Pesanan</a><a class="hover:text-on-surface transition-colors" data-path="tentang-dan-kontak" href="#">Bantuan &amp; FAQ</a></div><div class="mt-space-sm flex gap-space-xs"><a class="flex-1 inline-flex items-center justify-center gap-space-xs py-2 px-3 rounded-xl bg-lumia-emerald text-on-surface font-label-caps text-label-caps tracking-wider uppercase hover:brightness-110 transition-all" href="https://wa.me/628123456789" target="_blank"><span class="material-symbols-outlined text-sm">chat</span>WhatsApp Us</a></div></div></div><div class="mt-space-xl pt-space-lg flex flex-col md:flex-row items-center justify-between gap-space-sm text-on-surface-variant font-body-sm text-body-sm"><p>© 2024 Dinar Fotocopy &amp; Digital Printing. Hak Cipta Dilindungi.</p><div class="flex items-center gap-space-md font-label-caps text-label-caps uppercase tracking-wider"><span class="hover:text-on-surface cursor-pointer transition-colors">Kebijakan Privasi</span><span class="hover:text-on-surface cursor-pointer transition-colors">Syarat Layanan</span><span class="hover:text-on-surface cursor-pointer transition-colors">Garansi Cetak</span></div></div></div></footer></body></html>
