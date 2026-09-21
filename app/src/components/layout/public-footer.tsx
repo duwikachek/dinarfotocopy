@@ -37,15 +37,13 @@ export function PublicFooter() {
           {/* ── Brand Column ── */}
           <div className="flex flex-col gap-4">
             <div className="flex items-center gap-3">
-              <div className="w-10 h-10 rounded-xl bg-white p-1 flex items-center justify-center shrink-0 shadow-[0_0_12px_rgba(0,164,239,0.35)] border border-lumia-cyan/30">
-                <Image
-                  src="/logo.png"
-                  alt="Logo Dinar Fotocopy"
-                  width={36}
-                  height={36}
-                  className="w-full h-full object-contain"
-                />
-              </div>
+              <Image
+                src="/logo.png"
+                alt="Logo Dinar Fotocopy"
+                width={40}
+                height={40}
+                className="w-10 h-10 rounded-2xl object-cover shadow-[0_0_12px_rgba(0,164,239,0.35)] shrink-0"
+              />
               <span className="text-headline-sm uppercase tracking-wider text-on-surface font-semibold">
                 DINAR FOTOCOPY
               </span>

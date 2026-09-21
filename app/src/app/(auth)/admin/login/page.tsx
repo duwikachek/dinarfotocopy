@@ -61,16 +61,14 @@ function LoginForm() {
     <div className="w-full max-w-sm animate-fade-in">
       {/* Brand */}
       <div className="text-center mb-8">
-        <div className="w-14 h-14 rounded-2xl bg-white border border-slate-200 p-1 flex items-center justify-center mx-auto mb-4 shadow-sm">
-          <Image
-            src="/logo.png"
-            alt="Logo Dinar Fotocopy"
-            width={48}
-            height={48}
-            className="w-full h-full object-contain"
-            priority
-          />
-        </div>
+        <Image
+          src="/logo.png"
+          alt="Logo Dinar Fotocopy"
+          width={64}
+          height={64}
+          className="w-16 h-16 rounded-3xl object-cover mx-auto mb-4 shadow-md"
+          priority
+        />
         <h1 className="text-xl font-bold text-[hsl(224,12%,12%)] tracking-tight">
           Dinar Fotocopy
         </h1>
