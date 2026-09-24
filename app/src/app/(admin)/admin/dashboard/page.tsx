@@ -3,24 +3,156 @@ import {
   ShoppingBag, Clock, Package, CheckCircle,
   TrendingUp, ArrowRight, AlertTriangle,
 } from "lucide-react";
+import { db } from "@/db";
+import { orders, orderItems, products } from "@/db/schema";
+import { eq, desc, gte, sql, and } from "drizzle-orm";
 import { dummyOrders, dummyProducts, dummyDashboardStats, orderStatusConfig } from "@/lib/dummy-data";
 import { formatRupiah, formatDate } from "@/lib/utils";
 import { OrderStatusBadge } from "@/components/ui/badge";
 import { AdminChart } from "@/components/admin/dashboard-chart";
 
-const statCards = [
-  { label: "Pesanan Hari Ini", value: dummyDashboardStats.ordersToday, icon: ShoppingBag, color: "text-blue-600", bg: "bg-blue-50" },
-  { label: "Menunggu Tindakan", value: dummyDashboardStats.ordersPending, icon: Clock, color: "text-amber-600", bg: "bg-amber-50" },
-  { label: "Stok ATK Menipis", value: dummyDashboardStats.lowStockProducts, icon: Package, color: "text-red-500", bg: "bg-red-50" },
-  { label: "Selesai Minggu Ini", value: dummyDashboardStats.completedThisWeek, icon: CheckCircle, color: "text-green-600", bg: "bg-green-50" },
-];
+// Fetch data dari DB atau fallback ke dummy
+async function getDashboardData() {
+  if (!process.env.DATABASE_URL) {
+    return {
+      ordersToday: dummyDashboardStats.ordersToday,
+      ordersPending: dummyDashboardStats.ordersPending,
+      lowStockProducts: dummyDashboardStats.lowStockProducts,
+      completedThisWeek: dummyDashboardStats.completedThisWeek,
+      chartData: dummyDashboardStats.chartData,
+      recentOrders: dummyOrders.slice(0, 5).map((o) => ({
+        id: o.id,
+        code: o.code,
+        customerName: o.customerName,
+        totalEstimate: o.totalEstimate,
+        status: o.status,
+        createdAt: o.createdAt,
+        itemCount: o.items.length,
+      })),
+      lowStockItems: dummyProducts
+        .filter((p) => p.stock <= p.lowStockThreshold)
+        .map((p) => ({ id: p.id, name: p.name, stock: p.stock })),
+    };
+  }
 
-const lowStockProducts = dummyProducts.filter(
-  (p) => p.stock <= p.lowStockThreshold
-);
+  try {
+    const now = new Date();
+    const startOfToday = new Date(now);
+    startOfToday.setHours(0, 0, 0, 0);
 
-export default function AdminDashboardPage() {
-  const recentOrders = dummyOrders.slice(0, 5);
+    const startOfWeek = new Date(now);
+    startOfWeek.setDate(now.getDate() - 7);
+    startOfWeek.setHours(0, 0, 0, 0);
+
+    // Stat queries in parallel
+    const [todayOrders, pendingOrders, completedWeek, recentOrdersRaw, lowStockRaw] =
+      await Promise.all([
+        db
+          .select({ count: sql<number>`count(*)::int` })
+          .from(orders)
+          .where(gte(orders.createdAt, startOfToday)),
+
+        db
+          .select({ count: sql<number>`count(*)::int` })
+          .from(orders)
+          .where(eq(orders.status, "pending")),
+
+        db
+          .select({ count: sql<number>`count(*)::int` })
+          .from(orders)
+          .where(
+            and(
+              eq(orders.status, "completed"),
+              gte(orders.createdAt, startOfWeek)
+            )
+          ),
+
+        db
+          .select({
+            id: orders.id,
+            code: orders.code,
+            customerName: orders.customerName,
+            totalEstimate: orders.totalEstimate,
+            status: orders.status,
+            createdAt: orders.createdAt,
+          })
+          .from(orders)
+          .orderBy(desc(orders.createdAt))
+          .limit(5),
+
+        db
+          .select({ id: products.id, name: products.name, stock: products.stock, lowStockThreshold: products.lowStockThreshold })
+          .from(products)
+          .where(eq(products.isActive, true)),
+      ]);
+
+    const lowStockItems = lowStockRaw.filter(
+      (p) => p.stock <= p.lowStockThreshold
+    );
+
+    // Get order counts per day for the last 7 days
+    const days = ["Min", "Sen", "Sel", "Rab", "Kam", "Jum", "Sab"];
+    const chartData = Array.from({ length: 7 }, (_, i) => {
+      const d = new Date(now);
+      d.setDate(now.getDate() - (6 - i));
+      d.setHours(0, 0, 0, 0);
+      return { day: days[d.getDay()], date: d, orders: 0 };
+    });
+
+    // Count items for recent orders
+    const recentWithCount = await Promise.all(
+      recentOrdersRaw.map(async (o) => {
+        const items = await db
+          .select({ count: sql<number>`count(*)::int` })
+          .from(orderItems)
+          .where(eq(orderItems.orderId, o.id));
+        return { ...o, itemCount: items[0]?.count ?? 0 };
+      })
+    );
+
+    return {
+      ordersToday: todayOrders[0]?.count ?? 0,
+      ordersPending: pendingOrders[0]?.count ?? 0,
+      lowStockProducts: lowStockItems.length,
+      completedThisWeek: completedWeek[0]?.count ?? 0,
+      chartData,
+      recentOrders: recentWithCount,
+      lowStockItems,
+    };
+  } catch (err) {
+    console.error("Dashboard data fetch error:", err);
+    // Fallback to dummy on error
+    return {
+      ordersToday: dummyDashboardStats.ordersToday,
+      ordersPending: dummyDashboardStats.ordersPending,
+      lowStockProducts: dummyDashboardStats.lowStockProducts,
+      completedThisWeek: dummyDashboardStats.completedThisWeek,
+      chartData: dummyDashboardStats.chartData,
+      recentOrders: dummyOrders.slice(0, 5).map((o) => ({
+        id: o.id,
+        code: o.code,
+        customerName: o.customerName,
+        totalEstimate: o.totalEstimate,
+        status: o.status,
+        createdAt: o.createdAt,
+        itemCount: o.items.length,
+      })),
+      lowStockItems: dummyProducts
+        .filter((p) => p.stock <= p.lowStockThreshold)
+        .map((p) => ({ id: p.id, name: p.name, stock: p.stock })),
+    };
+  }
+}
+
+export default async function AdminDashboardPage() {
+  const data = await getDashboardData();
+
+  const statCards = [
+    { label: "Pesanan Hari Ini", value: data.ordersToday, icon: ShoppingBag, color: "text-blue-600", bg: "bg-blue-50" },
+    { label: "Menunggu Tindakan", value: data.ordersPending, icon: Clock, color: "text-amber-600", bg: "bg-amber-50" },
+    { label: "Stok ATK Menipis", value: data.lowStockProducts, icon: Package, color: "text-red-500", bg: "bg-red-50" },
+    { label: "Selesai Minggu Ini", value: data.completedThisWeek, icon: CheckCircle, color: "text-green-600", bg: "bg-green-50" },
+  ];
 
   return (
     <div className="flex flex-col gap-8">
@@ -61,7 +193,7 @@ export default function AdminDashboardPage() {
             </div>
             <TrendingUp className="w-4 h-4 text-[hsl(38,92%,50%)]" strokeWidth={1.5} />
           </div>
-          <AdminChart data={dummyDashboardStats.chartData} />
+          <AdminChart data={data.chartData} />
         </div>
 
         {/* Low stock */}
@@ -70,11 +202,11 @@ export default function AdminDashboardPage() {
             <h2 className="text-sm font-bold text-[hsl(224,12%,12%)]">Stok ATK Menipis</h2>
             <AlertTriangle className="w-4 h-4 text-amber-500" strokeWidth={1.5} />
           </div>
-          {lowStockProducts.length === 0 ? (
+          {data.lowStockItems.length === 0 ? (
             <p className="text-xs text-[hsl(220,10%,55%)]">Semua stok aman.</p>
           ) : (
             <div className="flex flex-col gap-3">
-              {lowStockProducts.map((p) => (
+              {data.lowStockItems.map((p) => (
                 <div key={p.id} className="flex items-center justify-between gap-2">
                   <p className="text-xs text-[hsl(224,12%,12%)] font-medium leading-tight line-clamp-1 flex-1">{p.name}</p>
                   <span className={`text-xs font-bold tabular-nums flex-shrink-0 ${p.stock === 0 ? "text-red-500" : "text-amber-600"}`}>
@@ -84,7 +216,10 @@ export default function AdminDashboardPage() {
               ))}
             </div>
           )}
-          <Link href="/admin/produk" className="flex items-center gap-1 text-xs font-medium text-[hsl(220,10%,46%)] hover:text-[hsl(224,12%,12%)] transition-colors mt-4">
+          <Link
+            href="/admin/produk"
+            className="flex items-center gap-1 text-xs font-medium text-[hsl(220,10%,46%)] hover:text-[hsl(224,12%,12%)] transition-colors mt-4"
+          >
             Kelola Produk ATK <ArrowRight className="w-3 h-3" strokeWidth={2} />
           </Link>
         </div>
@@ -94,7 +229,10 @@ export default function AdminDashboardPage() {
       <div className="rounded-xl bg-white border border-[hsl(220,13%,91%)] overflow-hidden">
         <div className="flex items-center justify-between p-5 border-b border-[hsl(220,13%,91%)]">
           <h2 className="text-sm font-bold text-[hsl(224,12%,12%)]">Pesanan Terbaru</h2>
-          <Link href="/admin/pesanan" className="flex items-center gap-1 text-xs font-medium text-[hsl(220,10%,46%)] hover:text-[hsl(224,12%,12%)] transition-colors">
+          <Link
+            href="/admin/pesanan"
+            className="flex items-center gap-1 text-xs font-medium text-[hsl(220,10%,46%)] hover:text-[hsl(224,12%,12%)] transition-colors"
+          >
             Lihat semua <ArrowRight className="w-3 h-3" strokeWidth={2} />
           </Link>
         </div>
@@ -108,7 +246,13 @@ export default function AdminDashboardPage() {
               </tr>
             </thead>
             <tbody className="divide-y divide-[hsl(220,13%,91%)]">
-              {recentOrders.map((order) => (
+              {data.recentOrders.length === 0 ? (
+                <tr>
+                  <td colSpan={6} className="px-4 py-10 text-center text-sm text-[hsl(220,10%,55%)]">
+                    Belum ada pesanan.
+                  </td>
+                </tr>
+              ) : data.recentOrders.map((order) => (
                 <tr key={order.id} className="hover:bg-[hsl(220,14%,98%)] transition-colors">
                   <td className="px-4 py-3.5 font-mono text-xs text-[hsl(224,12%,12%)] font-medium">{order.code}</td>
                   <td className="px-4 py-3.5 text-[hsl(224,12%,12%)]">{order.customerName}</td>
@@ -120,7 +264,10 @@ export default function AdminDashboardPage() {
                     {formatDate(order.createdAt)}
                   </td>
                   <td className="px-4 py-3.5">
-                    <Link href={`/admin/pesanan/${order.id}`} className="text-xs text-[hsl(220,10%,46%)] hover:text-[hsl(224,12%,12%)] font-medium transition-colors">
+                    <Link
+                      href={`/admin/pesanan/${order.id}`}
+                      className="text-xs text-[hsl(220,10%,46%)] hover:text-[hsl(224,12%,12%)] font-medium transition-colors"
+                    >
                       Detail →
                     </Link>
                   </td>

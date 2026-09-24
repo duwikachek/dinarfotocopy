@@ -4,11 +4,15 @@ import { z } from "zod";
 import { revalidatePath } from "next/cache";
 import { auth } from "@/auth";
 import { db } from "@/db";
-import { services, serviceVariants } from "@/db/schema";
+import { services, categories } from "@/db/schema";
 import { eq } from "drizzle-orm";
 
+const isUuid = (val?: string | null): boolean =>
+  typeof val === "string" &&
+  /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i.test(val);
+
 const serviceSchema = z.object({
-  categoryId: z.string().uuid("Kategori harus dipilih."),
+  categoryId: z.string().min(1, "Kategori harus dipilih."),
   name: z.string().min(3, "Nama layanan minimal 3 karakter."),
   slug: z.string().min(3, "Slug minimal 3 karakter."),
   shortDescription: z.string().min(5, "Deskripsi singkat minimal 5 karakter."),
@@ -35,7 +39,24 @@ export async function createServiceAction(rawInput: z.infer<typeof serviceSchema
   }
 
   try {
-    const inserted = await db.insert(services).values(parsed.data).returning();
+    let resolvedCategoryId = parsed.data.categoryId;
+    if (!isUuid(resolvedCategoryId)) {
+      const cat = await db.select({ id: categories.id }).from(categories).where(eq(categories.kind, "service")).limit(1);
+      if (cat[0]) {
+        resolvedCategoryId = cat[0].id;
+      } else {
+        return { success: false, error: "Kategori layanan tidak valid di database." };
+      }
+    }
+
+    const inserted = await db
+      .insert(services)
+      .values({
+        ...parsed.data,
+        categoryId: resolvedCategoryId,
+      })
+      .returning();
+
     revalidatePath("/admin/layanan");
     revalidatePath("/layanan");
     return { success: true, service: inserted[0] };
@@ -47,7 +68,7 @@ export async function createServiceAction(rawInput: z.infer<typeof serviceSchema
 export async function updateServiceAction(id: string, rawInput: Partial<z.infer<typeof serviceSchema>>) {
   const session = await auth();
   if (!session?.user) {
-    return { success: false, error: "Akses ditolak." };
+    return { success: false, error: "Akses ditolak. Silakan login terlebih dahulu." };
   }
 
   if (!process.env.DATABASE_URL) {
@@ -55,10 +76,44 @@ export async function updateServiceAction(id: string, rawInput: Partial<z.infer<
   }
 
   try {
+    let targetId = id;
+    if (!isUuid(targetId)) {
+      if (rawInput.slug) {
+        const found = await db.select({ id: services.id }).from(services).where(eq(services.slug, rawInput.slug)).limit(1);
+        if (found[0]) {
+          targetId = found[0].id;
+        }
+      }
+      if (!isUuid(targetId)) {
+        return { success: false, error: "ID layanan tidak valid untuk pembaruan database." };
+      }
+    }
+
+    const updateData: Record<string, any> = { updatedAt: new Date() };
+    if (rawInput.name !== undefined) updateData.name = rawInput.name;
+    if (rawInput.slug !== undefined) updateData.slug = rawInput.slug;
+    if (rawInput.shortDescription !== undefined) updateData.shortDescription = rawInput.shortDescription;
+    if (rawInput.description !== undefined) updateData.description = rawInput.description;
+    if (rawInput.unit !== undefined) updateData.unit = rawInput.unit;
+    if (rawInput.basePrice !== undefined) updateData.basePrice = Number(rawInput.basePrice);
+    if (rawInput.sortOrder !== undefined) updateData.sortOrder = Number(rawInput.sortOrder);
+    if (rawInput.isActive !== undefined) updateData.isActive = rawInput.isActive;
+
+    if (rawInput.categoryId !== undefined) {
+      let catId = rawInput.categoryId;
+      if (!isUuid(catId)) {
+        const cat = await db.select({ id: categories.id }).from(categories).where(eq(categories.kind, "service")).limit(1);
+        if (cat[0]) catId = cat[0].id;
+      }
+      if (isUuid(catId)) {
+        updateData.categoryId = catId;
+      }
+    }
+
     await db
       .update(services)
-      .set({ ...rawInput, updatedAt: new Date() })
-      .where(eq(services.id, id));
+      .set(updateData)
+      .where(eq(services.id, targetId));
 
     revalidatePath("/admin/layanan");
     revalidatePath("/layanan");
@@ -79,10 +134,15 @@ export async function toggleServiceActiveAction(id: string, currentStatus: boole
   }
 
   try {
+    let targetId = id;
+    if (!isUuid(targetId)) {
+      return { success: false, error: "ID layanan tidak valid." };
+    }
+
     await db
       .update(services)
       .set({ isActive: !currentStatus, updatedAt: new Date() })
-      .where(eq(services.id, id));
+      .where(eq(services.id, targetId));
 
     revalidatePath("/admin/layanan");
     revalidatePath("/layanan");
@@ -103,7 +163,12 @@ export async function deleteServiceAction(id: string) {
   }
 
   try {
-    await db.delete(services).where(eq(services.id, id));
+    let targetId = id;
+    if (!isUuid(targetId)) {
+      return { success: false, error: "ID layanan tidak valid." };
+    }
+
+    await db.delete(services).where(eq(services.id, targetId));
     revalidatePath("/admin/layanan");
     revalidatePath("/layanan");
     return { success: true };
