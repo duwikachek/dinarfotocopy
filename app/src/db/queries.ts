@@ -258,7 +258,7 @@ export interface StoreSettings {
 export async function getStoreSettings(): Promise<StoreSettings> {
   const defaults: StoreSettings = {
     store_name: "Dinar Fotocopy",
-    store_tagline: "Cetak cepat, rapi, dan terpercaya sejak 2015.",
+    store_tagline: "Cetak cepat, rapi, dan terpercaya sejak 2024.",
     store_address: "Jl. Melati No. 22, Kel. Sukamaju, Kota Bandung",
     store_whatsapp: process.env.NEXT_PUBLIC_STORE_WHATSAPP || "628123456789",
     store_operational_hours: "Senin–Sabtu 08.00–21.00 WIB, Minggu 09.00–17.00 WIB",

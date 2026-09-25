@@ -4,7 +4,7 @@ import { getStoreSettings } from "@/db/queries";
 
 export const metadata: Metadata = {
   title: "Tentang Kami — Dinar Fotocopy",
-  description: "Kenali lebih dekat Dinar Fotocopy, usaha percetakan dan fotokopi terpercaya di Bandung sejak 2015. Visi, nilai, dan tim kami.",
+  description: "Kenali lebih dekat Dinar Fotocopy, usaha percetakan dan fotokopi terpercaya di Jakarta Barat sejak 2024. Visi, nilai, dan tim kami.",
 };
 
 export const dynamic = "force-dynamic";
@@ -31,7 +31,7 @@ export default async function TentangPage() {
             Lebih dari sekedar tempat fotokopi
           </h1>
           <p className="text-[hsl(220,10%,46%)] leading-relaxed max-w-2xl mx-auto">
-            Sejak 2015, Dinar Fotocopy hadir untuk memenuhi kebutuhan cetak harian masyarakat Bandung dengan layanan yang cepat, rapi, dan harga bersahabat.
+            Sejak 2024, Dinar Fotocopy hadir untuk memenuhi kebutuhan cetak harian masyarakat Jakarta Barat dengan layanan yang cepat, rapi, dan harga bersahabat.
           </p>
         </div>
       </section>
@@ -43,7 +43,7 @@ export default async function TentangPage() {
             <div>
               <h2 className="text-2xl font-bold text-[hsl(224,12%,12%)] tracking-tight mb-4">Cerita Kami</h2>
               <div className="flex flex-col gap-4 text-sm text-[hsl(220,10%,36%)] leading-relaxed">
-                <p>Dinar Fotocopy didirikan pada tahun 2015 oleh Pak Dinar di sebuah ruko kecil di Jl. Melati, Bandung. Berawal dari sebuah mesin fotokopi bekas dan tekad untuk melayani warga sekitar dengan baik, usaha ini perlahan tumbuh menjadi tempat yang dipercaya ribuan pelanggan.</p>
+                <p>Dinar Fotocopy didirikan pada tahun 2024 oleh Pak Dinar di sebuah ruko kecil di Jakarta Barat. Berawal dari sebuah mesin fotokopi bekas dan tekad untuk melayani warga sekitar dengan baik, usaha ini perlahan tumbuh menjadi tempat yang dipercaya ribuan pelanggan.</p>
                 <p>Kami memahami bahwa di balik setiap dokumen yang dicetak, ada kebutuhan nyata yang mendesak — skripsi yang harus dikumpulkan besok, proposal yang ingin dipresentasikan, atau foto kenangan yang ingin dibingkai. Karena itu, kami tidak pernah anggap remeh satu pun pesanan.</p>
                 <p>Kini, dengan mesin cetak modern dan tim yang berpengalaman, Dinar Fotocopy siap melayani kebutuhan cetak Anda — dari satu lembar hingga ribuan eksemplar.</p>
               </div>
@@ -52,7 +52,7 @@ export default async function TentangPage() {
               {/* Stats */}
               <div className="grid grid-cols-2 gap-4">
                 {[
-                  { value: "2015", label: "Tahun berdiri" },
+                  { value: "2024", label: "Tahun berdiri" },
                   { value: "1.000+", label: "Pelanggan aktif" },
                   { value: "7", label: "Jenis layanan" },
                   { value: "98%", label: "Tingkat kepuasan" },

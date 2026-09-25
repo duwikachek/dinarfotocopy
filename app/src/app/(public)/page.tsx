@@ -117,7 +117,7 @@ export default async function BerandaPage() {
                   <div className="flex items-center gap-2 px-2.5 py-1 rounded-lg"
                     style={{ background: "rgba(255,255,255,0.08)", backdropFilter: "blur(12px)" }}>
                     <span className="material-symbols-outlined text-sm text-lumia-cyan">verified</span>
-                    <span className="text-label-caps text-on-surface font-semibold tracking-widest">EST. 2015 • BANDUNG</span>
+                    <span className="text-label-caps text-on-surface font-semibold tracking-widest">EST. 2024 • JAKARTA BARAT</span>
                   </div>
                   <div className="flex items-center gap-1.5 px-2.5 py-1 rounded-full"
                     style={{ background: "rgba(0,0,0,0.4)" }}>
