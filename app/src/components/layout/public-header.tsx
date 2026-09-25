@@ -6,6 +6,7 @@ import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { cn } from "@/lib/utils";
 import { useCartStore } from "@/store/cart-store";
+import type { StoreSettings } from "@/db/queries";
 
 const navLinks = [
   { href: "/", label: "Beranda", pathKey: "/" },
@@ -15,13 +16,14 @@ const navLinks = [
   { href: "/tentang", label: "Tentang & Kontak", pathKey: "/tentang" },
 ];
 
-const WA_NUMBER = "628123456789";
-const WA_URL = `https://wa.me/${WA_NUMBER}?text=Halo%20Dinar%20Fotocopy%2C%20saya%20ingin%20memesan%20layanan.`;
-
-export function PublicHeader() {
+export function PublicHeader({ settings }: { settings?: StoreSettings }) {
   const [mobileOpen, setMobileOpen] = useState(false);
   const pathname = usePathname();
   const totalItems = useCartStore((s) => s.getTotalItems());
+
+  const waNumber = String(settings?.store_whatsapp || "628123456789");
+  const waUrl = `https://wa.me/${waNumber}?text=Halo%20Dinar%20Fotocopy%2C%20saya%20ingin%20memesan%20layanan.`;
+  const storeName = String(settings?.store_name || "DINAR FOTOCOPY");
 
   const isActive = (pathKey: string) => {
     if (pathKey === "/") return pathname === "/";
@@ -37,7 +39,7 @@ export function PublicHeader() {
         <Link href="/" className="flex items-center gap-3 shrink-0" aria-label="Dinar Fotocopy — Beranda">
           <Image
             src="/logo.png"
-            alt="Logo Dinar Fotocopy"
+            alt={`Logo ${storeName}`}
             width={40}
             height={40}
             className="w-10 h-10 rounded-2xl object-cover shadow-[0_0_15px_rgba(0,164,239,0.4)] shrink-0 hover:scale-105 transition-transform"
@@ -45,11 +47,11 @@ export function PublicHeader() {
           />
           <div className="flex flex-col">
             <span className="text-headline-sm text-on-surface font-semibold uppercase tracking-wider leading-none">
-              DINAR FOTOCOPY
+              {storeName}
             </span>
             <div className="hidden sm:inline-flex items-center gap-1 mt-0.5 px-2 py-0.5 rounded-full bg-surface-container-high/80 text-lumia-emerald text-label-caps">
               <span className="w-1.5 h-1.5 rounded-full bg-lumia-emerald animate-pulse" />
-              Buka Hari Ini 08.00 – 21.00 WIB
+              {settings?.store_operational_hours || "Buka Hari Ini 08.00 – 21.00 WIB"}
             </div>
           </div>
         </Link>
@@ -76,7 +78,7 @@ export function PublicHeader() {
         <div className="flex items-center gap-3 shrink-0">
           {/* WhatsApp CTA button */}
           <a
-            href={WA_URL}
+            href={waUrl}
             target="_blank"
             rel="noopener noreferrer"
             className="hidden md:inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl bg-primary-container text-on-primary-container text-label-caps uppercase tracking-wider hover:brightness-110 active:scale-95 transition-all"
@@ -141,7 +143,7 @@ export function PublicHeader() {
             ))}
             <div className="pt-3 mt-2" style={{ borderTop: "1px solid rgba(255,255,255,0.1)" }}>
               <a
-                href={WA_URL}
+                href={waUrl}
                 target="_blank"
                 rel="noopener noreferrer"
                 onClick={() => setMobileOpen(false)}

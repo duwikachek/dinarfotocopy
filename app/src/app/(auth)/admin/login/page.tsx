@@ -12,7 +12,20 @@ function LoginForm() {
   const router = useRouter();
   const searchParams = useSearchParams();
   const rawCallback = searchParams.get("callbackUrl");
-  const callbackUrl = !rawCallback || rawCallback === "/admin" ? "/admin/dashboard" : rawCallback;
+  const validAdminRoutes = [
+    "/admin/dashboard",
+    "/admin/pesanan",
+    "/admin/layanan",
+    "/admin/kategori",
+    "/admin/produk",
+    "/admin/notifikasi",
+    "/admin/pengaturan",
+    "/admin/profil",
+  ];
+  const isValidRoute =
+    rawCallback &&
+    validAdminRoutes.some((r) => rawCallback === r || rawCallback.startsWith(r + "/") || rawCallback.startsWith(r + "?"));
+  const callbackUrl = isValidRoute ? rawCallback : "/admin/dashboard";
 
   const [form, setForm] = useState({ email: "", password: "" });
   const [errors, setErrors] = useState<Record<string, string>>({});

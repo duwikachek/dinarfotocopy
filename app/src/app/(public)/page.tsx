@@ -1,5 +1,6 @@
 import Link from "next/link";
 import type { Metadata } from "next";
+import { getStoreSettings } from "@/db/queries";
 
 export const metadata: Metadata = {
   title: "Dinar Fotocopy — Cetak Cepat, Presisi & Rapi di Bandung",
@@ -13,32 +14,37 @@ export const metadata: Metadata = {
   },
 };
 
-const WA_BASE = "https://wa.me/628123456789";
+export const dynamic = "force-dynamic";
 
-const localBusinessJsonLd = {
-  "@context": "https://schema.org",
-  "@type": "LocalBusiness",
-  name: "Dinar Fotocopy",
-  description: "Layanan fotokopi, print, cetak foto, banner, jilid, laminating, dan scan di Bandung.",
-  url: "https://dinarfotocopy.id",
-  telephone: "+628123456789",
-  address: {
-    "@type": "PostalAddress",
-    streetAddress: "Jl. Melati No. 22, Kel. Sukamaju",
-    addressLocality: "Bandung",
-    addressRegion: "Jawa Barat",
-    postalCode: "40123",
-    addressCountry: "ID",
-  },
-  geo: { "@type": "GeoCoordinates", latitude: -6.9175, longitude: 107.6189 },
-  openingHoursSpecification: [
-    { "@type": "OpeningHoursSpecification", dayOfWeek: ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"], opens: "08:00", closes: "21:00" },
-    { "@type": "OpeningHoursSpecification", dayOfWeek: "Sunday", opens: "10:00", closes: "17:00" },
-  ],
-  priceRange: "Rp 300 - Rp 150.000",
-};
+export default async function BerandaPage() {
+  const settings = await getStoreSettings();
+  const waBase = `https://wa.me/${String(settings.store_whatsapp || "628123456789")}`;
+  const storeAddress = String(settings.store_address || "Jl. Melati No. 22");
+  const storeName = String(settings.store_name || "Dinar Fotocopy");
+  const mapUrl = settings.map_embed_url ? "/kontak" : "https://maps.google.com";
 
-export default function BerandaPage() {
+  const localBusinessJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    name: storeName,
+    description: "Layanan fotokopi, print, cetak foto, banner, jilid, laminating, dan scan di Bandung.",
+    url: "https://dinarfotocopy.id",
+    telephone: `+${settings.store_whatsapp || "628123456789"}`,
+    address: {
+      "@type": "PostalAddress",
+      streetAddress: storeAddress,
+      addressLocality: "Bandung",
+      addressRegion: "Jawa Barat",
+      postalCode: "40123",
+      addressCountry: "ID",
+    },
+    geo: { "@type": "GeoCoordinates", latitude: -6.9175, longitude: 107.6189 },
+    openingHoursSpecification: [
+      { "@type": "OpeningHoursSpecification", dayOfWeek: ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"], opens: "08:00", closes: "21:00" },
+      { "@type": "OpeningHoursSpecification", dayOfWeek: "Sunday", opens: "10:00", closes: "17:00" },
+    ],
+    priceRange: "Rp 300 - Rp 150.000",
+  };
   return (
     <>
       {/* Schema.org JSON-LD */}
@@ -158,7 +164,7 @@ export default function BerandaPage() {
                       <span className="material-symbols-outlined text-base">calculate</span>
                       Hitung Biaya
                     </Link>
-                    <a href={`${WA_BASE}?text=Halo%20Dinar%20Fotocopy%2C%20saya%20ingin%20order%20cetak`}
+                    <a href={`${waBase}?text=Halo%20${encodeURIComponent(storeName)}%2C%20saya%20ingin%20order%20cetak`}
                       target="_blank" rel="noopener noreferrer"
                       className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-lumia-emerald text-on-surface text-sm font-semibold hover:brightness-110 active:scale-95 transition-all">
                       <span className="material-symbols-outlined text-base">chat</span>
@@ -174,7 +180,7 @@ export default function BerandaPage() {
                 <div className="flex items-start justify-between">
                   <div className="flex flex-col">
                     <span className="text-label-caps text-lumia-cyan tracking-widest">STORE PULSE</span>
-                    <span className="text-headline-md text-on-surface font-semibold">Dinar Hub Melati</span>
+                    <span className="text-headline-md text-on-surface font-semibold">{storeName}</span>
                   </div>
                   <div className="w-10 h-10 rounded-lg bg-surface-container flex items-center justify-center text-lumia-cyan">
                     <span className="material-symbols-outlined text-2xl">storefront</span>
@@ -220,9 +226,9 @@ export default function BerandaPage() {
                   style={{ borderTop: "1px solid rgba(255,255,255,0.06)" }}>
                   <div className="flex items-center gap-1.5 text-on-surface-variant">
                     <span className="material-symbols-outlined text-sm text-lumia-coral">location_on</span>
-                    <span>Jl. Melati No. 22</span>
+                    <span>{storeAddress}</span>
                   </div>
-                  <a href="https://maps.google.com" target="_blank" rel="noopener noreferrer"
+                  <a href={mapUrl} target="_blank" rel="noopener noreferrer"
                     className="text-label-caps text-lumia-cyan hover:underline font-semibold flex items-center gap-0.5">
                     Rute <span className="material-symbols-outlined text-xs">arrow_outward</span>
                   </a>
@@ -438,7 +444,7 @@ export default function BerandaPage() {
                     <span className="material-symbols-outlined text-lumia-amber">cloud_upload</span>
                     <span className="text-on-surface-variant">Kirim file PDF lewat WhatsApp?</span>
                   </div>
-                  <a href={`${WA_BASE}?text=Halo%20Dinar%2C%20saya%20kirim%20file%20untuk%20dicetak`}
+                  <a href={`${waBase}?text=Halo%20${encodeURIComponent(storeName)}%2C%20saya%20kirim%20file%20untuk%20dicetak`}
                     target="_blank" rel="noopener noreferrer"
                     className="text-label-caps text-lumia-amber font-bold hover:underline">Kirim File</a>
                 </div>
@@ -560,7 +566,7 @@ export default function BerandaPage() {
                 </div>
               </div>
               <a
-                href={`${WA_BASE}?text=Halo%20Dinar%20Fotocopy%2C%20saya%20punya%20dokumen%20urgent%20mau%20dicetak`}
+                href={`${waBase}?text=Halo%20${encodeURIComponent(storeName)}%2C%20saya%20punya%20dokumen%20urgent%20mau%20dicetak`}
                 target="_blank" rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-lumia-emerald text-on-surface font-bold text-sm hover:brightness-110 active:scale-95 transition-all"
                 style={{ boxShadow: "0 4px 16px rgba(16,185,129,0.3)" }}

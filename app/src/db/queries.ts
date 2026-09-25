@@ -243,3 +243,65 @@ export async function getProductsData(): Promise<ProductWithCategory[]> {
     return dummyProducts as unknown as ProductWithCategory[];
   }
 }
+
+export interface StoreSettings {
+  store_name: string;
+  store_tagline: string;
+  store_address: string;
+  store_whatsapp: string;
+  store_operational_hours: string;
+  map_embed_url: string;
+  bulk_discount_rules: { minQty: number; percent: number }[];
+  notify_admin_on_new_order: boolean;
+}
+
+export async function getStoreSettings(): Promise<StoreSettings> {
+  const defaults: StoreSettings = {
+    store_name: "Dinar Fotocopy",
+    store_tagline: "Cetak cepat, rapi, dan terpercaya sejak 2015.",
+    store_address: "Jl. Melati No. 22, Kel. Sukamaju, Kota Bandung",
+    store_whatsapp: process.env.NEXT_PUBLIC_STORE_WHATSAPP || "628123456789",
+    store_operational_hours: "Senin–Sabtu 08.00–21.00 WIB, Minggu 09.00–17.00 WIB",
+    map_embed_url: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3960.8044444444446!2d107.6189!3d-6.9175!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNsKwNTUnMDMuMCJTIDEwN8KwMzcnMDguMCJF!5e0!3m2!1sid!2sid!4v1700000000000!5m2!1sid!2sid",
+    bulk_discount_rules: [
+      { minQty: 100, percent: 5 },
+      { minQty: 500, percent: 10 },
+    ],
+    notify_admin_on_new_order: true,
+  };
+
+  if (!process.env.DATABASE_URL) {
+    return defaults;
+  }
+
+  try {
+    const rows = await db.select().from(settings);
+    if (!rows || rows.length === 0) {
+      return defaults;
+    }
+
+    const map = new Map<string, any>();
+    for (const r of rows) {
+      map.set(r.key, r.value);
+    }
+
+    const profile = (map.get("store_profile") as Record<string, any>) || {};
+
+    return {
+      store_name: String(map.get("store_name") || profile.store_name || defaults.store_name),
+      store_tagline: String(map.get("store_tagline") || profile.store_tagline || defaults.store_tagline),
+      store_address: String(map.get("store_address") || profile.store_address || defaults.store_address),
+      store_whatsapp: String(map.get("store_whatsapp") || profile.store_whatsapp || defaults.store_whatsapp),
+      store_operational_hours: String(map.get("store_operational_hours") || profile.store_operational_hours || defaults.store_operational_hours),
+      map_embed_url: String(map.get("map_embed_url") || profile.map_embed_url || defaults.map_embed_url),
+      bulk_discount_rules: (map.get("bulk_discount_rules") as any) || defaults.bulk_discount_rules,
+      notify_admin_on_new_order: map.has("notify_admin_on_new_order")
+        ? Boolean(map.get("notify_admin_on_new_order"))
+        : (profile.notify_admin_on_new_order ?? defaults.notify_admin_on_new_order),
+    };
+  } catch (err) {
+    console.error("Gagal mengambil pengaturan dari DB, gunakan fallback:", err);
+    return defaults;
+  }
+}
+

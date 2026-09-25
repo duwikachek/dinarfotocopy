@@ -1,10 +1,13 @@
 import { MapPin, Clock, Phone, Mail, Heart, Award, Users, Printer } from "lucide-react";
 import type { Metadata } from "next";
+import { getStoreSettings } from "@/db/queries";
 
 export const metadata: Metadata = {
   title: "Tentang Kami — Dinar Fotocopy",
   description: "Kenali lebih dekat Dinar Fotocopy, usaha percetakan dan fotokopi terpercaya di Bandung sejak 2015. Visi, nilai, dan tim kami.",
 };
+
+export const dynamic = "force-dynamic";
 
 const values = [
   { icon: Heart, title: "Pelayanan Tulus", desc: "Kami melayani setiap pelanggan dengan hati, bukan sekadar transaksi." },
@@ -13,7 +16,11 @@ const values = [
   { icon: Users, title: "Dekat dengan Komunitas", desc: "Sudah melayani ribuan pelajar, mahasiswa, dan pelaku usaha di Bandung." },
 ];
 
-export default function TentangPage() {
+export default async function TentangPage() {
+  const settings = await getStoreSettings();
+  const waNumber = String(settings.store_whatsapp || "628123456789");
+  const formattedPhone = waNumber.startsWith("62") ? "0" + waNumber.slice(2) : waNumber;
+  const waUrl = `https://wa.me/${waNumber}?text=Halo%20${encodeURIComponent(settings.store_name)}%2C%20saya%20ingin%20bertanya.`;
   return (
     <div className="animate-fade-in">
       {/* Hero */}
@@ -62,27 +69,28 @@ export default function TentangPage() {
                   <div className="w-8 h-8 rounded-lg bg-[hsl(224,12%,12%)] flex items-center justify-center">
                     <Printer className="w-4 h-4 text-white" strokeWidth={1.5} />
                   </div>
-                  <p className="text-sm font-bold text-[hsl(224,12%,12%)]">Dinar Fotocopy</p>
+                  <p className="text-sm font-bold text-[hsl(224,12%,12%)]">{settings.store_name}</p>
                 </div>
                 <div className="flex flex-col gap-2 text-sm text-[hsl(220,10%,46%)]">
                   <div className="flex items-start gap-2">
                     <MapPin className="w-4 h-4 text-[hsl(38,92%,50%)] flex-shrink-0 mt-0.5" strokeWidth={1.5} />
-                    <span>Jl. Melati No. 22, Kel. Sukamaju, Kota Bandung, Jawa Barat 40215</span>
+                    <span>{settings.store_address}</span>
                   </div>
                   <div className="flex items-start gap-2">
                     <Clock className="w-4 h-4 text-[hsl(38,92%,50%)] flex-shrink-0 mt-0.5" strokeWidth={1.5} />
-                    <div>
-                      <p>Sen–Sab: 08.00–21.00 WIB</p>
-                      <p>Minggu: 09.00–17.00 WIB</p>
-                    </div>
+                    <p>{settings.store_operational_hours}</p>
                   </div>
                   <div className="flex items-center gap-2">
                     <Phone className="w-4 h-4 text-[hsl(38,92%,50%)]" strokeWidth={1.5} />
-                    <a href="https://wa.me/628123456789" className="hover:text-[hsl(224,12%,12%)] transition-colors">0812-3456-789</a>
+                    <a href={waUrl} target="_blank" rel="noopener noreferrer" className="hover:text-[hsl(224,12%,12%)] transition-colors">
+                      {formattedPhone} (WhatsApp)
+                    </a>
                   </div>
                   <div className="flex items-center gap-2">
                     <Mail className="w-4 h-4 text-[hsl(38,92%,50%)]" strokeWidth={1.5} />
-                    <a href="mailto:dinar@fotocopy.id" className="hover:text-[hsl(224,12%,12%)] transition-colors">dinar@fotocopy.id</a>
+                    <a href="mailto:order@dinarfotocopy.id" className="hover:text-[hsl(224,12%,12%)] transition-colors">
+                      order@dinarfotocopy.id
+                    </a>
                   </div>
                 </div>
               </div>

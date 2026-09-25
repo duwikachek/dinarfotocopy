@@ -1,8 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
-
-const WA_NUMBER = "628123456789";
-const WA_URL = `https://wa.me/${WA_NUMBER}?text=Halo%20Dinar%20Fotocopy%2C%20saya%20ingin%20memesan%20layanan.`;
+import type { StoreSettings } from "@/db/queries";
 
 const serviceLinks = [
   { href: "/layanan#fotokopi", label: "Fotokopi & Print" },
@@ -21,13 +19,18 @@ const quickLinks = [
   { href: "/faq", label: "FAQ" },
 ];
 
-const operationalHours = [
-  { day: "Senin – Jumat", hours: "08.00 – 21.00 WIB", active: true },
-  { day: "Sabtu", hours: "08.00 – 18.00 WIB", active: true },
-  { day: "Minggu & Libur", hours: "10.00 – 17.00 WIB", active: false },
-];
+export function PublicFooter({ settings }: { settings?: StoreSettings }) {
+  const waNumber = String(settings?.store_whatsapp || "628123456789");
+  const waUrl = `https://wa.me/${waNumber}?text=Halo%20Dinar%20Fotocopy%2C%20saya%20ingin%20memesan%20layanan.`;
+  const storeAddress = String(settings?.store_address || "Jl. Melati No. 22, Kel. Sukamaju, Bandung, Jawa Barat 40123");
+  const storeName = String(settings?.store_name || "DINAR FOTOCOPY");
+  const opHours = String(settings?.store_operational_hours || "Senin – Sabtu 08.00 – 21.00 WIB, Minggu 09.00 – 17.00 WIB");
 
-export function PublicFooter() {
+  // Pretty format for Indonesian phone number
+  const formattedPhone = waNumber.startsWith("62")
+    ? "0" + waNumber.slice(2)
+    : waNumber;
+
   return (
     <footer className="w-full bg-deep-purple-end/95 text-on-surface">
       {/* Main footer grid */}
@@ -39,17 +42,17 @@ export function PublicFooter() {
             <div className="flex items-center gap-3">
               <Image
                 src="/logo.png"
-                alt="Logo Dinar Fotocopy"
+                alt={`Logo ${storeName}`}
                 width={40}
                 height={40}
                 className="w-10 h-10 rounded-2xl object-cover shadow-[0_0_12px_rgba(0,164,239,0.35)] shrink-0"
               />
               <span className="text-headline-sm uppercase tracking-wider text-on-surface font-semibold">
-                DINAR FOTOCOPY
+                {storeName}
               </span>
             </div>
             <p className="text-body-sm text-on-surface-variant leading-relaxed">
-              Pusat fotokopi berkecepatan tinggi, percetakan digital profesional, penjilidan dokumen rapi, dan perlengkapan alat tulis kantor berkualitas di Bandung.
+              {settings?.store_tagline || "Pusat fotokopi berkecepatan tinggi, percetakan digital profesional, penjilidan dokumen rapi, dan perlengkapan alat tulis kantor berkualitas di Bandung."}
             </p>
             <div className="inline-flex items-center gap-2 text-lumia-cyan text-label-caps">
               <span className="material-symbols-outlined text-base">verified</span>
@@ -57,7 +60,7 @@ export function PublicFooter() {
             </div>
             {/* WA CTA */}
             <a
-              href={WA_URL}
+              href={waUrl}
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-lumia-emerald text-on-surface font-semibold text-body-sm hover:brightness-110 transition-all mt-1"
@@ -73,12 +76,12 @@ export function PublicFooter() {
             <ul className="flex flex-col gap-3 text-body-sm text-on-surface-variant">
               <li className="flex items-start gap-2">
                 <span className="material-symbols-outlined text-base text-lumia-coral mt-0.5 shrink-0">location_on</span>
-                <span>Jl. Melati No. 22, Kel. Sukamaju, Bandung, Jawa Barat 40123</span>
+                <span>{storeAddress}</span>
               </li>
               <li className="flex items-center gap-2">
                 <span className="material-symbols-outlined text-base text-lumia-emerald shrink-0">call</span>
-                <a href={`tel:+628123456789`} className="hover:text-lumia-emerald transition-colors">
-                  WA: 0812-3456-789
+                <a href={`tel:+${waNumber}`} className="hover:text-lumia-emerald transition-colors">
+                  WA: {formattedPhone}
                 </a>
               </li>
               <li className="flex items-center gap-2">
@@ -90,9 +93,7 @@ export function PublicFooter() {
               <li className="flex items-center gap-2">
                 <span className="material-symbols-outlined text-base text-lumia-cyan shrink-0">map</span>
                 <a
-                  href="https://maps.google.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
+                  href={settings?.map_embed_url ? "/kontak" : "https://maps.google.com"}
                   className="hover:text-lumia-cyan transition-colors flex items-center gap-1"
                 >
                   Lihat di Google Maps
@@ -106,15 +107,12 @@ export function PublicFooter() {
           <div className="flex flex-col gap-4">
             <span className="text-headline-sm text-on-surface font-semibold">Jam Layanan Toko</span>
             <div className="flex flex-col gap-2">
-              {operationalHours.map(({ day, hours, active }) => (
-                <div key={day} className="flex justify-between items-center py-1"
-                  style={{ borderBottom: "1px solid rgba(255,255,255,0.06)" }}>
-                  <span className="text-body-sm text-on-surface">{day}</span>
-                  <span className={`text-body-sm font-semibold ${active ? "text-lumia-cyan" : "text-tertiary"}`}>
-                    {hours}
-                  </span>
-                </div>
-              ))}
+              <div className="py-1" style={{ borderBottom: "1px solid rgba(255,255,255,0.06)" }}>
+                <span className="text-body-sm text-on-surface block mb-1">Operasional:</span>
+                <span className="text-body-sm font-semibold text-lumia-cyan">
+                  {opHours}
+                </span>
+              </div>
             </div>
             <div className="p-3 rounded-xl bg-surface-container-high/60 flex items-center gap-2">
               <span className="w-2 h-2 rounded-full bg-lumia-emerald animate-pulse shrink-0" />
