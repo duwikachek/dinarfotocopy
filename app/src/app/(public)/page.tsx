@@ -194,7 +194,7 @@ export default async function BerandaPage() {
                     <span className="material-symbols-outlined text-lumia-amber text-3xl">wb_sunny</span>
                     <div className="flex flex-col">
                       <span className="text-headline-sm font-light text-on-surface">28°C</span>
-                      <span className="text-label-caps text-on-surface-variant">Bandung Cerah</span>
+                      <span className="text-label-caps text-on-surface-variant">Jakarta Barat Cerah</span>
                     </div>
                   </div>
                   <div className="flex flex-col text-right">
@@ -203,23 +203,7 @@ export default async function BerandaPage() {
                   </div>
                 </div>
 
-                {/* Print queue gauge */}
-                <div className="space-y-2">
-                  <div className="flex justify-between items-center text-body-sm">
-                    <span className="text-on-surface-variant flex items-center gap-1.5">
-                      <span className="w-2 h-2 rounded-full bg-lumia-cyan animate-pulse" />
-                      Antrean Cetak Aktif
-                    </span>
-                    <span className="font-semibold text-on-surface">3 Pesanan</span>
-                  </div>
-                  <div className="w-full h-2 rounded-full overflow-hidden bg-surface-container">
-                    <div className="bg-lumia-cyan h-full rounded-full transition-all duration-500" style={{ width: "40%" }} />
-                  </div>
-                  <div className="flex justify-between text-label-caps text-on-surface-variant">
-                    <span>Estimasi Tunggu: ≤ 10 Mnt</span>
-                    <span className="text-lumia-emerald">Normal Load</span>
-                  </div>
-                </div>
+
 
                 {/* Location action */}
                 <div className="mt-3 pt-2 flex items-center justify-between text-body-sm"
